@@ -54,6 +54,11 @@
               <div class="col-md-12 col-md-push-4">
                 <a href="ResetPasswordPage" class="col-md-8 col-md-pull-2" style="font-size:17px; color:#1e88e5;text-decoration:underline;">Forget Password?</a>
               </div>
+              <div class="col-md-12"> 
+              <br/>
+              </div>
+            </div>
+            	
             </div>
           </form>
         </div>
