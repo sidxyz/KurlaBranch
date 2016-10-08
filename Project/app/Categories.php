@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name','gender', 'dob','contact','email','password','address'
+        'name', 'is_visible','image_url'
     ];
 
     /**
@@ -26,9 +26,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-     public function User()
+     public function Categories()
 {
-    return $this->hasMany(orders::class);
+    return $this->hasMany(products::class);
+    return $this->hasMany(attributes::class);
+}
 }
 
 }
