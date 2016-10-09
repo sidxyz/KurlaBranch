@@ -45,7 +45,7 @@
                   <label class="control-label" style="font-size:15px;" for="Title">Category</label>
                 </div>
                 <div class="col-md-7 col-md-pull-1">
-                  <select class="col-md-12">
+                  <select class="col-md-12" style="height:5%;">
                     <option selected="" value="mobiles">Mobiles</option>
                     <option value="tablets">Tablets</option>
                     <option value="laptops">Laptops</option>
@@ -104,13 +104,11 @@
               </div>
               <!-- Text input-->
               <div class="form-group col-md-12">
-                <div class="col-md-4">
-                  <label class="control-label" style="font-size:15px;" for="Title">Processor</label>
-                </div>
-                <div class="col-md-6">
+                
+                <div class="col-md-8 col-md-push-3">
                   <input id="processor" name="processor" placeholder="" class="col-md-12 col-md-pull-2 form-control input-md" type="text">
                 </div>
-                <div class="col-md-1 col-md-pull-1" style="margin-top:2%;">
+                <div class="col-md-1 col-md-push-1" style="margin-top:2%;">
                   <span class="glyphicon glyphicon-trash"></span>
                 </div>
               </div>
@@ -128,7 +126,7 @@
                   <button class="btn btn-success">Add Product</button>
                 </div>
                 <div class="col-md-5 col-md-push-2">
-                  <button class=" btn btn-success">Cancle</button>
+                  <button class=" btn btn-success">Cancel</button>
                 </div>
               </div>
             </form>
