@@ -27,10 +27,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
      public function Categories()
-{
+    {
     return $this->hasMany(products::class);
     return $this->hasMany(attributes::class);
-}
+    }
 }
 
-}
+
