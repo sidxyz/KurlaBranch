@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name','gender', 'dob','contact','email','password','address'
+        'name', 'value','category_id'
     ];
 
     /**
@@ -26,9 +26,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-     public function User()
+     public function Attribute()
 {
-    return $this->hasMany(orders::class);
+    return $this->belongsTo(categories::class);
 }
 
 }
