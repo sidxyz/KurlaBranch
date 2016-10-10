@@ -92,25 +92,25 @@
                   
                   <div class="col-md-7 col-md-pull-1">
                   <div class="file col-md-7">
-                    <input type="file" name="file" id="id_media">
+                    <input type="file" name="file" id="fileupload" name="image" class="img">
                     <span class="value"></span>
                     <span class="bt-value">Upload</span>
                   </div>
                 </div> 
-                
+
                 </div>
                 <!-- Text input-->
                 <div class="form-group col-md-9">
-                  <div class="col-md-10 col-md-push-3">
-                    <div contenteditable="true" style="border:1px solid; height:23%;">
-                      <img src="">
-                      <label class="col-md-12" style="margin-top:15%">Thumbnail of the First Image</label>
-                    </div>
-                  </div>
-                  <div class="col-md-2 col-md-push-2">
-                    <span class="glyphicon glyphicon-trash"></span>
+                <div class="col-md-10 col-md-push-3">
+                  <div id="dvPreview" style="border:1px solid; height:20%;">
+                    
+                    
                   </div>
                 </div>
+                <div class="col-md-2 col-md-push-2">
+                  <span class="glyphicon glyphicon-trash"></span>
+                </div>
+              </div>
                 <!-- Text input-->
                 <div class="form-group col-md-12">
                   <div class="col-md-8 col-md-push-3">
@@ -136,3 +136,35 @@
       </div>
 </div>
 @endsection 
+@section('script')
+<script type="text/javascript">
+$(function () {
+            $("#fileupload").change(function () {
+                if (typeof (FileReader) != "undefined") {
+                    var dvPreview = $("#dvPreview");
+                    dvPreview.html("");
+                    var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
+                    $($(this)[0].files).each(function () {
+                        var file = $(this);
+                        if (regex.test(file[0].name.toLowerCase())) {
+                            var reader = new FileReader();
+                            reader.onload = function (e) {
+                                var img = $("<img />");
+                                img.attr("style", "height:127px;width: 205px");
+                                img.attr("src", e.target.result);
+                                dvPreview.append(img);
+                            }
+                            reader.readAsDataURL(file[0]);
+                        } else {
+                            alert(file[0].name + " is not a valid image file.");
+                            dvPreview.html("");
+                            return false;
+                        }
+                    });
+                } else {
+                    alert("This browser does not support HTML5 FileReader.");
+                }
+            });
+        });
+</script>
+@stop
