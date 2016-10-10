@@ -33,6 +33,7 @@
     <script type="text/javascript" src="js/datepicker.js"></script>
     <script type="text/javascript" src="js/file.js"></script>
     <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+    
 
     @yield('script')<!-- This to include your script-->	
     @include('backend.partials.footer')
