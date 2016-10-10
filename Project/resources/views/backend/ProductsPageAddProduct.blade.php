@@ -75,16 +75,7 @@
               </div>
             </form>
           </div>
-          <style>
-          #imagePreview {
-              width: 180px;
-              height: 180px;
-              background-position: center center;
-              background-size: cover;
-              -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
-              display: inline-block;
-          }
-          </style>
+          
           <div class="col-md-6 text-center" style=" margin-top:-1%;">
             <form class="form-horizontal">
               <div class="form-group col-md-12 ">
@@ -94,7 +85,7 @@
                 
                 <div class="col-md-7 col-md-pull-1">
                   <div class="file col-md-7">
-                    <input type="file" name="file" id="uploadFile" name="image" class="img">
+                    <input type="file" name="file" id="fileupload" name="image" class="img">
                     <span class="value"></span>
                     <span class="bt-value">Upload</span>
                   </div>
@@ -104,7 +95,7 @@
               <!-- Text input-->
               <div class="form-group col-md-9">
                 <div class="col-md-10 col-md-push-3">
-                  <div id="imagePreview" style="border:1px solid; height:20%;">
+                  <div id="dvPreview" style="border:1px solid; height:20%;">
                     
                     
                   </div>
@@ -149,21 +140,33 @@
 @endsection    
 @section('script')
 <script type="text/javascript">
-$(function() {
-    $("#uploadFile").on("change", function()
-    {
-        var files = !!this.files ? this.files : [];
-        if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
-
-        if (/^image/.test( files[0].type)){ // only image file
-            var reader = new FileReader(); // instance of the FileReader
-            reader.readAsDataURL(files[0]); // read the local file
-
-            reader.onloadend = function(){ // set image data as background of div
-                $("#imagePreview").css("background-image", "url("+this.result+")");
-            }
-        }
-    });
-});
+$(function () {
+            $("#fileupload").change(function () {
+                if (typeof (FileReader) != "undefined") {
+                    var dvPreview = $("#dvPreview");
+                    dvPreview.html("");
+                    var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
+                    $($(this)[0].files).each(function () {
+                        var file = $(this);
+                        if (regex.test(file[0].name.toLowerCase())) {
+                            var reader = new FileReader();
+                            reader.onload = function (e) {
+                                var img = $("<img />");
+                                img.attr("style", "height:127px;width: 205px");
+                                img.attr("src", e.target.result);
+                                dvPreview.append(img);
+                            }
+                            reader.readAsDataURL(file[0]);
+                        } else {
+                            alert(file[0].name + " is not a valid image file.");
+                            dvPreview.html("");
+                            return false;
+                        }
+                    });
+                } else {
+                    alert("This browser does not support HTML5 FileReader.");
+                }
+            });
+        });
 </script>
 @stop
