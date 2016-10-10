@@ -3,7 +3,7 @@
     <h2 class="text-info text-left" id="head">ShopUp</h2>
     <br/>
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header" style="border: 1px solid #763A7A ; ">
+    <div class="navbar-header" style="border: 1px solid black; ">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -14,7 +14,7 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="background-color:#763A7A; margin-bottom:10px; padding:-10px; border-radius:3px;">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="background-color:black; margin-bottom:10px; padding:-10px; border-radius:3px;">
       <ul class="nav navbar-nav">
             
             <li>

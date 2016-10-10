@@ -43,3 +43,6 @@ Route::get('/ProductsPageAddProduct','PageController@ProductsPageAddProduct');
 Route::get('/ProductsPageEditProduct','PageController@ProductsPageEditProduct');
 Route::get('/BannersPage','PageController@BannersPage');
 Route::get('/StaticPages','PageController@StaticPages');
+
+Auth::routes();
+Route::get('/SignInPage', 'HomeController@index');

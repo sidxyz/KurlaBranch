@@ -18,14 +18,14 @@ h1,h2,h3,h4,h5,h6,div,td,thead
 .navbar
 {
 	border-radius:0px; 
-	background-color:lightblue; 
+	background-color:#bdbdbd; 
 	border-style:none;
 }
 
-
 #head
 {
- background: linear-gradient(330deg, #e05252 0%, #99e052 25%, #52e0e0 50%, #9952e0 75%, #e05252 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  font-size: 43px;	
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
