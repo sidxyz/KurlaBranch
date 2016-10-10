@@ -36,6 +36,5 @@
     
 
     @yield('script')<!-- This to include your script-->	
-    @include('backend.partials.footer')
 	</body>
 </html>

@@ -7,7 +7,8 @@ height: 34px;
 background: url('../img/file.png') no-repeat 0 0;
 }
 
-.file input {
+.file input 
+{
 position: absolute;
 right: 0;
 right: 0;
@@ -34,7 +35,7 @@ z-index: 10;
 .file .bt-value {
 position: absolute;
 top: 8px;
-right:13px;
+right:23px;
 font: 14px ProximaNovaBold, Helvetica, Arial, sans-serif !important;
 color: white !important;
 text-shadow: 0 -1px 0 rgba(1, 2, 2, 0.25) !important;

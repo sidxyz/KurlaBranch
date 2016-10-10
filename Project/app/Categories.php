@@ -28,9 +28,8 @@ class User extends Authenticatable
     ];
      public function Categories()
     {
-    return $this->hasMany(products::class);
-    return $this->hasMany(attributes::class);
+        return $this->hasMany(products::class);
+        return $this->hasMany(attributes::class);
     }
 }
-
 
