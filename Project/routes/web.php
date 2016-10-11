@@ -38,8 +38,29 @@ Route::get('/CategoryPageAddCategory','PageController@CategoryPageAddCategory');
 Route::get('/CategoryPageEditCategory','PageController@CategoryPageEditCategory');
 Route::get('/CategoryPageListattributes','PageController@CategoryPageListattributes');
 Route::get('/CategoryPageProductListing','PageController@CategoryPageProductListing');
-Route::get('/ProductsPage','PageController@ProductsPage');
+/*Route::get('/ProductsPage','PageController@ProductsPage');
 Route::get('/ProductsPageAddProduct','PageController@ProductsPageAddProduct');
-Route::get('/ProductsPageEditProduct','PageController@ProductsPageEditProduct');
+Route::get('/ProductsPageEditProduct','PageController@ProductsPageEditProduct');*/
 Route::get('/BannersPage','PageController@BannersPage');
 Route::get('/StaticPages','PageController@StaticPages');
+
+
+//for Product Routes
+
+Route::get('ProductsPageAddProduct','ProductController@create');
+Route::post('store','ProductController@store');
+Route::get('ProductsPage','ProductController@index');
+Route::get("delete/{id}","ProductController@destroy");
+Route::get('edit/{id}','ProductController@edit');
+Route::patch('edit/update/{id}','ProductController@update');
+
+
+//for category Routes
+
+Route::get('CategoryPageAddCategory','CategoryController@createcat');
+Route::post('storecat','CategoryController@storecat');
+Route::get('CategoryPage','CategoryController@indexcat');
+Route::get("deletecat/{id}","CategoryController@destroycat");
+Route::get('editcat/{id}','CategoryController@editcat');
+Route::patch('editcat/updatecat/{id}','CategoryController@updatecat');
+

@@ -80,7 +80,7 @@ class PageController extends Controller
       return view('backend.OrderListingPage');
     }
 
-    public function CategoryPage()
+    /*public function CategoryPage()
      {
        return view('backend.CategoryPage');
      } 
@@ -93,7 +93,7 @@ class PageController extends Controller
      public function CategoryPageEditCategory()
      {
       return view('backend.CategoryPageEditCategory');
-     }
+     }*/
 
       public function CategoryPageListattributes()
       {
@@ -105,7 +105,7 @@ class PageController extends Controller
         return view('backend.CategoryPageProductListing');
       }    
 
-      public function ProductsPage()
+     /* public function ProductsPage()
       {
         return view('backend.ProductsPage');
       }    
@@ -118,7 +118,7 @@ class PageController extends Controller
       public function ProductsPageEditProduct()
       {
         return view('backend.ProductsPageEditProduct');
-      }
+      }*/
       
       public function BannersPage()
       {

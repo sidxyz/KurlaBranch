@@ -2,21 +2,21 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+//use Illuminate\Notifications\Notifiable;
+//use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class Category extends Model
 {
-    use Notifiable;
+   // use Notifiable;
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'is_visible','image_url'
-    ];
+    protected $primaryKey = 'category_id';
+    protected $fillable = ['category_name', 'isVisible','images'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -26,7 +26,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-     public function Categories()
+     public function Category()
     {
         return $this->hasMany(products::class);
         return $this->hasMany(attributes::class);

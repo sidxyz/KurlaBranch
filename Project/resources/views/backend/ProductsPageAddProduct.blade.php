@@ -11,15 +11,20 @@
           </div>
           <div class="col-md-12" style="border:1px solid; border-radius:0px; padding: 5%;">
           <div class="col-md-6 text-center">
-            <form class="form-horizontal" action="ProductsPage" method="POST">
+
+
+            <form class="form-horizontal" action="store" method="POST">
               <!-- Text input-->
+
+
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
               <div class="form-group col-md-12">
                 <div class="col-md-5 col-md-pull-1">
                   <label class="control-label" style="font-size:15px;" for="Title">Product Name</label>
                 </div>
                 <div class="col-md-7 col-md-pull-1">
-                  <input id="Productname" name="name_pro" placeholder="" class="form-control input-md" type="text">
+                  <input id="name_pro" name="name_pro" placeholder="" class="form-control input-md" type="text">
                 </div>
               </div>
               <!-- Text input-->
@@ -28,7 +33,7 @@
                   <label class="control-label" style="font-size:15px;" for="Title">Quantity in stock</label>
                 </div>
                 <div class="col-md-7 col-md-pull-1">
-                  <input id="Quantityinstock" name="quantity" placeholder="" class="form-control input-md" type="text">
+                  <input id="quantity" name="quantity" placeholder="" class="form-control input-md" type="text">
                 </div>
               </div>
               <!-- Text input-->
@@ -37,7 +42,7 @@
                   <label class="control-label" style="font-size:15px;" for="Title">Price per Unit</label>
                 </div>
                 <div class="col-md-7 col-md-pull-1">
-                  <input id="Priceperunit" name="price_pro" placeholder="" class="form-control input-md" type="text">
+                  <input id="price_pro" name="price_pro" placeholder="" class="form-control input-md" type="text">
                 </div>
               </div>
               <!-- Text input-->
@@ -47,11 +52,11 @@
                 </div>
                 <div class="col-md-7 col-md-pull-1">
                   <select class="col-md-12" style="height:5%;" name="category_name">
-                    <option selected="" value="mobiles">Mobiles</option>
-                    <option value="tablets">Tablets</option>
-                    <option value="laptops">Laptops</option>
-                    <option value="motherboards">Motherboards</option>
-                    <option value="processors">Processors</option>
+                    <option selected="" value="Mobile">Mobile</option>
+                    <option value="Tablet">Tablet</option>
+                    <option value="Laptop">Laptop</option>
+                    <option value="Motherboard">Motherboard</option>
+                    <option value="Processor">Processor</option>
                   </select>
                 </div>
               </div>
@@ -73,11 +78,12 @@
                   <input id="processor" name="processor" placeholder="" class="form-control input-md" type="text">
                 </div>
               </div>
-            </form>
+            
           </div>
           
           <div class="col-md-6 text-center" style=" margin-top:-1%;">
             <form class="form-horizontal">
+            
               <div class="form-group col-md-12 ">
                 <div class="col-md-3 col-md-pull-2;">
                   <label class="control-label" for="upload">Images</label>
@@ -96,8 +102,6 @@
               <div class="form-group col-md-9">
                 <div class="col-md-10 col-md-push-3">
                   <div id="dvPreview" style="border:1px solid; height:20%;">
-                    
-                    
                   </div>
                 </div>
                 <div class="col-md-2 col-md-push-2">
@@ -125,10 +129,10 @@
               </div>
               <div class="form-group col-md-7 col-md-push-1">
                 <div class="col-md-7">
-                  <button class="btn btn-success">Add Product</button>
+                  <button class="btn btn-success" type="submit" name="submit">Add Product</button>
                 </div>
                 <div class="col-md-5 col-md-push-2">
-                  <button class=" btn btn-success">Cancel</button>
+                  <button class=" btn btn-success" type="clear">Cancel</button>
                 </div>
               </div>
             </form>
@@ -139,7 +143,7 @@
 </div>
 @endsection    
 @section('script')
-<script type="text/javascript">
+<script type="text/javascript"> 
 $(function () {
             $("#fileupload").change(function () {
                 if (typeof (FileReader) != "undefined") {

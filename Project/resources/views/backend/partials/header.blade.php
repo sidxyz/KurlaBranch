@@ -10,7 +10,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-        <a href="Dashboard" style=" margin-left:2%; padding:15px; font-size:15px; " class="glyphicon glyphicon-home navbar-brand">&nbsp;Dashboard</a>
+        <a href="{{ asset('Dashboard') }}" style=" margin-left:2%; padding:15px; font-size:15px; " class="glyphicon glyphicon-home navbar-brand">&nbsp;Dashboard</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -18,19 +18,19 @@
       <ul class="nav navbar-nav">
             
             <li>
-              <a href="OrderListingPage" style=" padding:15px;" class="hvr-bounce-to-bottom"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;Orders</a>
+              <a href="{{ asset('OrderListingPage') }}" style=" padding:15px;" class="hvr-bounce-to-bottom"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;Orders</a>
             </li>
             <li>
-              <a href="CategoryPage" style=" padding:15px;" class="hvr-bounce-to-bottom"><span class="glyphicon glyphicon-list"></span>&nbsp;Categories</a>
+              <a href="{{ asset('CategoryPage') }}" style=" padding:15px;" class="hvr-bounce-to-bottom"><span class="glyphicon glyphicon-list"></span>&nbsp;Categories</a>
             </li>
             <li>
-              <a href="ProductsPage" style=" padding:15px;" class="hvr-bounce-to-bottom"><span class="glyphicon glyphicon-shopping-cart">Products</a>
+              <a href="{{ asset('ProductsPage') }}" style=" padding:15px;" class="hvr-bounce-to-bottom"><span class="glyphicon glyphicon-shopping-cart">Products</a>
             </li>
             <li>
-              <a href="BannersPage" style=" padding:15px;" class="hvr-bounce-to-bottom"><span class="glyphicon glyphicon-blackboard"></span>&nbsp;Banners</a>
+              <a href="{{ asset('BannersPage') }}" style=" padding:15px;" class="hvr-bounce-to-bottom"><span class="glyphicon glyphicon-blackboard"></span>&nbsp;Banners</a>
             </li>
             <li>
-              <a href="StaticPages" style=" padding:15px;" class="hvr-bounce-to-bottom"><span class="glyphicon glyphicon-duplicate"></span>&nbsp;Static Pages</a>
+              <a href="{{ asset('StaticPages') }}" style=" padding:15px;" class="hvr-bounce-to-bottom"><span class="glyphicon glyphicon-duplicate"></span>&nbsp;Static Pages</a>
             </li>
           </ul>
 

@@ -1,29 +1,6 @@
 @extends('backend.layout')
 @include('backend.partials.header')
 @section('content')
-<div class="modal fade" id="myModalDele" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		              <div class="modal-dialog">
-		                <div class="modal-content">
-		                  <!-- Modal Header -->
-		                  <div class="modal-header" style="background-color:grey;">
-		                    <h4 class="modal-title" style="text-align:center;" id="myModalLabel">Delete Product</h4>
-		                  </div>
-		                  <!-- Modal Body -->
-		                  <div class="modal-body">
-		                    <form role="form">
-		                      <div class="form-group">
-		                        <p>If You Delete This Product,you will no longer See it  in front end or backend.</p>
-                            <p> Are you sure you want to Delete this product?</p>
-		                      </div>
-		                      <div class="form-group">
-		                        <button type="submit" class="btn btn-success col-md-offset-3 btn-responsive">Delete</button>
-		                        <button type="button" class="btn btn-success col-md-offset-2 btn-responsive" data-dismiss="modal">Cancle</button>
-		                      </div>
-		                    </form>
-		                  </div>
-		                </div>
-		              </div>
-</div>
 
 <div class="col-md-push-1  col-md-10 container-fluid">
       <div class="col-md-12 ">
@@ -57,38 +34,48 @@
                 </tfoot>
                 <tbody>
                   <tr>
-                    <td>1</td>
-                    <td>Redmi Note 3</td>
-                    <td>Mobiles</td>
-                    <td>12000</td>
-                    <td>5000</td>
-                    <td>1/02/15</td>
+                  @foreach($user as $values)
+                    <td>{{ $values->product_id }}</td>
+                    <td>{{ $values->name_pro }}</td>
+                    <td>{{ $values->category_name }}</td>
+                    <td>{{ $values->price_pro }}</td>
+                    <td>{{ $values->quantity }}</td>
+                    <td>{{ $values->created_at }}</td>
                     <td>
-                    <button class="btn tddata"><a href="ProductsPageEditProduct" style="text-decoration:none;color:blue;">Edit</a></button><button class="btn tddata" data-toggle="modal" data-target="#myModalDele">Delete</button>
-                   </td>
-                  </tr>
+                    <!--<button class="btn tddata"><a href="ProductsPageEditProduct" >Edit</a></button>-->
+                    <a class="btn tddata" style="text-decoration:none;color:blue;" href="edit/{{ $values->product_id }}">Edit</a>
                     
-                  <tr>
-                    <td>2</td>
-                    <td>Samsung Galaxy J5</td>
-                    <td>Mobiles</td>
-                    <td>15000</td>
-                    <td>4500</td>
-                    <td>15/09/15</td>
-                    <td>
-                    <button class="btn tddata"><a href="ProductsPageEditProduct" style="text-decoration:none;color:blue;">Edit</a></button><button class="btn tddata" data-toggle="modal" data-target="#myModalDele">Delete</button>
-                   </td>
-                  </tr>
                     
-                	<td>3</td>
-	            	<td></td>
-	            	<td></td>
-	            	<td></td>
-	            	<td></td>      
-	            	<td></td>
-	            	<td></td>
-                  </tr>  
+                    <button class="btn tddata" data-toggle="modal" data-target="#myModalDele{{$values->product_id}}">Delete</button>
 
+                    <div class="modal fade" id="myModalDele{{$values->product_id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <!-- Modal Header -->
+                      <div class="modal-header" style="background-color:grey;">
+                        <h4 class="modal-title" style="text-align:center;" id="myModalLabel">Delete Product</h4>
+                      </div>
+                      <!-- Modal Body -->
+                      <div class="modal-body">
+                        <form role="form" >
+                          <div class="form-group">
+                            <p>If You Delete This Product,you will no longer See it  in front end or backend.</p>
+                            <p> Are you sure you want to Delete this product?</p>
+                          </div>
+                          <div class="form-group">                     
+                            <a class="btn btn-success col-md-offset-3 btn-responsive" href="delete/{{ $values->product_id }}">Delete</a>
+                            <button type="button" class="btn btn-success col-md-offset-2 btn-responsive" data-dismiss="modal">Cancel</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                   </td>
+                  </tr>
+                  @endforeach  
+                  
                 </tbody>
               </table>
             </div>      

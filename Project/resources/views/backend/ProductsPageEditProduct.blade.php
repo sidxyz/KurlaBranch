@@ -6,9 +6,14 @@
         <div class="col-md-12  text-justify well well-lg" style="border:1px solid; border-radius:0px;">
           <div class="col-md-5">
             <label>
-              <h4>Products/Edit Prodcuts</h4>
+              <h4>Products/Edit Products</h4>
             </label>
           </div>
+          <form class="form-horizontal" action="update/{{ $user->product_id }}" method="POST" enctype="multipart/form-data">
+
+          {{method_field('patch')}}
+          
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <div class="form-group col-md-3 col-md-push-4">
             <div class="col-md-5">
               <button class="btn btn-success">Save</button>
@@ -19,14 +24,14 @@
           </div>
           <div class="col-md-12" style="border:1px solid; border-radius:0px;padding: 5%;">
             <div class="col-md-6 text-center">
-              <form class="form-horizontal">
+              
                 <!-- Text input-->
                 <div class="form-group col-md-12">
                   <div class="col-md-5 col-md-pull-1">
                     <label class="control-label" style="font-size:15px;" for="Title">Product Name</label>
                   </div>
                   <div class="col-md-7 col-md-pull-1">
-                    <input id="Productname" name="Productname" placeholder="" class="form-control input-md" type="text" value="Redmi Note 3" >
+                    <input id="Productname" name="name_pro" placeholder="" class="form-control input-md" type="text" value="{{ $user->name_pro }}" >
                   </div>
                 </div>
                 <!-- Text input-->
@@ -35,7 +40,7 @@
                     <label class="control-label" style="font-size:15px;" for="Title">Quantity in stock</label>
                   </div>
                   <div class="col-md-7 col-md-pull-1">
-                    <input id="Quantityinstock" name="Quantityinstock" placeholder="" class="form-control input-md" type="text" value="5000">
+                    <input id="Quantityinstock" name="quantity" placeholder="" class="form-control input-md" type="text" value="{{ $user->quantity }}">
                   </div>
                 </div>
                 <!-- Text input-->
@@ -44,7 +49,7 @@
                     <label class="control-label" style="font-size:15px;" for="Title">Price per Unit</label>
                   </div>
                   <div class="col-md-7 col-md-pull-1">
-                    <input id="Priceperunit" name="Priceperunit" placeholder="" class="form-control input-md" type="text" value="12000">
+                    <input id="Priceperunit" name="price_pro" placeholder="" class="form-control input-md" type="text" value="{{ $user->price_pro }}">
                   </div>
                 </div>
                 <!-- Text input-->
@@ -53,12 +58,18 @@
                     <label class="control-label" style="font-size:15px;" for="Title">Category</label>
                   </div>
                   <div class="col-md-7 col-md-pull-1">
-                    <select class="col-md-12" style="height: 5%;">
-                      <option selected="" value="mobiles">Mobiles</option>
-                      <option value="tablets">Tablets</option>
-                      <option value="laptops">Laptops</option>
-                      <option value="motherboards">Motherboards</option>
-                      <option value="processors">Processors</option>
+                    <select class="col-md-12" style="height: 5%;" name="category_name">
+
+                      <option value="Mobile" <?=$user->category_name == 'Mobile' ? ' selected="selected"' : '';?>>Mobiles</option>
+
+                      <option value="Tablet" <?=$user->category_name == 'Tablet' ? ' selected="selected"' : '';?>>Tablets</option>
+
+                      <option value="Laptop" <?=$user->category_name == 'Laptop' ? ' selected="selected"' : '';?>>Laptops</option>
+
+                      <option value="Motherboard" <?=$user->category_name == 'Motherboard' ? ' selected="selected"' : '';?>>Motherboards</option>
+                      
+                      <option value="Processor" <?=$user->category_name == 'Processor' ? ' selected="selected"' : '';?>> Processors</option>
+
                     </select>
                   </div>
                 </div>
