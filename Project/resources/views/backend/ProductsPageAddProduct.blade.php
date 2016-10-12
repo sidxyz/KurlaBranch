@@ -89,32 +89,31 @@
                   <label class="control-label" for="upload">Images</label>
                 </div>
                 
-                <div class="col-md-7 col-md-pull-1">
-                  <div class="file col-md-7">
-                    <input type="file" name="file" id="fileupload" name="image" class="img">
-                    <span class="value"></span>
-                    <span class="bt-value">Upload</span>
+                <div class="col-md-8 col-md-push-0">
+                  <div class="input-group">
+                  <input type="file" class="filestyle" name="images" id="fileupload" data-buttonText="Upload">
                   </div>
-                </div> 
+                </div>
+ 
               
               </div>
               <!-- Text input-->
-              <div class="form-group col-md-9">
-                <div class="col-md-10 col-md-push-3">
-                  <div id="dvPreview" style="border:1px solid; height:20%;">
+               <div class="form-group col-md-9">
+                <div class="col-md-10 col-md-push-4">
+                  <div id="dvPreview" style="border:1px solid; height:20%;">      
                   </div>
                 </div>
-                <div class="col-md-2 col-md-push-2">
-                  <span class="glyphicon glyphicon-trash"></span>
+                <div class="col-md-2 col-md-push-3">
+                  <span class="glyphicon glyphicon-trash" id="deleteimg"></span>
                 </div>
               </div>
               <!-- Text input-->
               <div class="form-group col-md-12">
                 
-                <div class="col-md-8 col-md-push-3">
-                  <input id="processor" name="processor" placeholder="" class="col-md-12 col-md-pull-2 form-control input-md" type="text">
+                <div class="col-md-7 col-md-push-3" style="margin-left:5%;">
+                  <input id="processor" name="" placeholder="" class="col-md-9 col-md-pull-1 form-control input-md" type="text">
                 </div>
-                <div class="col-md-1 col-md-push-1" style="margin-top:2%;">
+                <div class="col-md-1 col-md-push-2  " style="margin-top:2%;">
                   <span class="glyphicon glyphicon-trash"></span>
                 </div>
               </div>
@@ -172,5 +171,13 @@ $(function () {
                 }
             });
         });
+</script>
+<script type="text/javascript">
+  $(function () {
+    var dvPreview = $("#dvPreview");
+    $('#deleteimg').click(function () {
+       dvPreview.html("");         
+    });
+  });
 </script>
 @stop

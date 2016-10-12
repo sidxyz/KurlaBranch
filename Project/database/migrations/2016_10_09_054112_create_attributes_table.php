@@ -14,10 +14,10 @@ class CreateAttributesTable extends Migration
     public function up()
     {
          Schema::create('attributes', function (Blueprint $table) {
-            $table->increments('attributes_id');
+            $table->increments('attribute_id');
             $table->string('attribute_name');
-            $table->integer('value');
-            $table->string('category');
+            $table->integer('attribute_value');
+            $table->string('category_name');
             $table->timestamps();
         });
     }

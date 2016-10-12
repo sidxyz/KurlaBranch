@@ -43,6 +43,10 @@ Route::get('/ProductsPageEditProduct','PageController@ProductsPageEditProduct');
 Route::get('/BannersPage','PageController@BannersPage');
 Route::get('/StaticPages','PageController@StaticPages');
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f6d14d212d3ffbd22643e32e8584284ba2858d55
 
 //for Product Routes
 
@@ -53,6 +57,12 @@ Route::get("delete/{id}","ProductController@destroy");
 Route::get('edit/{id}','ProductController@edit');
 Route::patch('edit/update/{id}','ProductController@update');
 
+//Category Product List
+
+Route::get('/CategoryPageProductListing','ProductController@indexList');
+Route::get("deletelist/{id}","ProductController@destroyList");
+Route::get('editlist/{id}','ProductController@edit');
+Route::patch('editlist/update/{id}','ProductController@updateList');
 
 //for category Routes
 
