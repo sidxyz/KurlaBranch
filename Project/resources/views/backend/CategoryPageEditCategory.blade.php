@@ -33,7 +33,7 @@
                 </div>
                 <div class=" col-md-7 col-md-pull-4">
                   <label class="radio-inline col-md-push-1" for="radios-0">
-                    <input name="isVisible" id="radios-0" value="True" <?= $cat->isVisible == 'True' ? ' checked="checked"' : '';?>  style="font-size:15px;" type="radio">Ture</label>
+                    <input name="isVisible" id="radios-0" value="True" <?= $cat->isVisible == 'True' ? ' checked="checked"' : '';?>  style="font-size:15px;" type="radio">True</label>
                   <label class="radio-inline col-md-push-1" for="radios-1">
                     <input name="isVisible" id="radios-1" value="False" <?= $cat->isVisible == 'False' ? ' checked="checked"' : '';?> style="font-size:15px;" type="radio">False</label>
                 </div>
@@ -44,7 +44,7 @@
                   <label class="control-label" for="upload" contenteditable="true">Icon</label>
                 </div>
               
-                <div class="col-md-7 col-md-pull-2">
+                <div class="col-md-9 col-md-push-4 form-group" style="margin-top:-6%;">
                   <div class="input-group">
                   <input type="file" class="filestyle" name="images" id="fileupload" data-buttonText="Upload" value="{{ $cat->images }}">
                   </div>

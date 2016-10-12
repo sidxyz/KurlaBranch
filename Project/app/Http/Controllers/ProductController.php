@@ -21,6 +21,12 @@ class ProductController extends Controller
         return view("backend.ProductsPage",compact("user"));
     }
 
+    public function indexList()
+    {
+        $user = Product::all();
+        return view("backend.CategoryPageProductListing",compact("user"));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -30,6 +36,7 @@ class ProductController extends Controller
     {
         return view ('backend.ProductsPageAddProduct');
     }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -82,6 +89,14 @@ class ProductController extends Controller
         $user->save();
         return redirect('ProductsPage')->with('message','updated');
     }
+    public function updateList(Request $request, $id)
+    {
+        
+        $user = Product::find($id);
+        $user->update(Request::all());
+        $user->save();
+        return redirect('CategoryPageProductListing')->with('message','updated');
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -97,4 +112,29 @@ class ProductController extends Controller
       
         return redirect('ProductsPage')->with('message','deleted');
     }
+    public function destroyList($id)
+    {
+        
+        $user = Product::find($id);
+        $user->delete();
+      
+        return redirect('CategoryPageProductListing')->with('message','deleted');
+    }
+
+    // public function editReassign($id)
+    // {
+    //     $user=Product::find($id);
+    //     return view("backend.CategoryPageProductListing",compact("user"));
+    // }
+
+    // public function reassignList(Request $request,$id)
+    // {
+    //     $user = Product::find($id);
+    //     dd($user);
+    //     $user->update(Request::all());
+    //     dd($user);
+    //     $user->save();
+    //     return redirect('CategoryPageProductListing')->with('message','updated');
+        
+    // }
 }

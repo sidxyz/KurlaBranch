@@ -44,7 +44,7 @@ Route::get('/ProductsPageEditProduct','PageController@ProductsPageEditProduct');
 Route::get('/BannersPage','PageController@BannersPage');
 Route::get('/StaticPages','PageController@StaticPages');
 
-<<<<<<< HEAD
+
 
 //for Product Routes
 
@@ -55,6 +55,12 @@ Route::get("delete/{id}","ProductController@destroy");
 Route::get('edit/{id}','ProductController@edit');
 Route::patch('edit/update/{id}','ProductController@update');
 
+//Category Product List
+
+Route::get('/CategoryPageProductListing','ProductController@indexList');
+Route::get("deletelist/{id}","ProductController@destroyList");
+Route::get('editlist/{id}','ProductController@edit');
+Route::patch('editlist/update/{id}','ProductController@updateList');
 
 //for category Routes
 
@@ -65,7 +71,7 @@ Route::get("deletecat/{id}","CategoryController@destroycat");
 Route::get('editcat/{id}','CategoryController@editcat');
 Route::patch('editcat/updatecat/{id}','CategoryController@updatecat');
 
-=======
+
 Auth::routes();
 Route::get('/SignInPage', 'HomeController@index');
->>>>>>> 8a9297c6ed97884b8fc85fc9fa2084ca36783dd5
+

@@ -1,7 +1,8 @@
 @extends('backend.layout')
 @include('backend.partials.header')
 @section('content')
-  <div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+ <div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		              <div class="modal-dialog">
 		                <div class="modal-content">
 		                  <!-- Modal Header -->
@@ -38,7 +39,7 @@
 		                      <div class="form-group">
 		                        <div class="col-md-12"><br/></div>
 		                        <button type="submit" class="btn btn-success col-md-offset-3 btn-responsive">Save</button>
-		                        <button type="button" class="btn btn-success col-md-offset-2 btn-responsive" data-dismiss="modal">Cancle</button>
+		                        <button type="button" class="btn btn-success col-md-offset-2 btn-responsive" data-dismiss="modal">Cancel</button>
 		                      </div>
 		                    </form>
 
