@@ -1,6 +1,7 @@
 @extends('frontend.layout')
 @include('frontend.partials.header1')
 @section('content')
+<script   src="https://code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="   crossorigin="anonymous"></script>
     <div class=" colo-md-10 container-fluid">
       <div class="row">
         <div class="col-md-10 col-md-push-1">
@@ -40,7 +41,7 @@
                       </div>
                       <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                          <button type="submit" class="btn btn-success btn-responsive" data-dismiss="modal">Cancle</button>
+                          <button type="submit" class="btn btn-success btn-responsive" data-dismiss="modal">Cancel</button>
                         </div>
                       </div>
                     </form>
@@ -70,8 +71,8 @@
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                       </div>
                       <div class="form-group">
-                        <button type="submit" class="btn btn-success col-md-offset-3 btn-responsive">Sing in</button>
-                        <button type="button" class="btn btn-success col-md-offset-2 btn-responsive" data-dismiss="modal">Cancle</button>
+                        <button type="submit" class="btn btn-success col-md-offset-3 btn-responsive">Sign in</button>
+                        <button type="button" class="btn btn-success col-md-offset-2 btn-responsive" data-dismiss="modal">Cancel</button>
                       </div>
                     </form>
                   </div>
@@ -82,6 +83,13 @@
           </div>
         </div>
         <div class=" colo-md-10 container-fluid">
+        <script>
+                  $(document).on('click', 'button.remove', function () {
+                   alert("Are you sure you want to remove this Product?");
+                   $(this).closest('tr').remove();
+                   return false;
+               });
+                        </script>
           <div class="row">
             <div class="col-md-10 col-md-push-1">
               <!--Lower part-->
@@ -113,7 +121,7 @@
                         <td>3</td>
                         <td>35000</td>
                         <td>Cash On Delivery</td>
-                        <td>Remove</td>
+                        <td><button class="remove">Remove</button></td>
                       </tr>
                       <tr>
                         <td>Moto G4 Plus(32GB)</td>
@@ -121,7 +129,7 @@
                         <td>2</td>
                         <td>35000</td>
                         <td>Cash On Delivery</td>
-                        <td>Remove</td>
+                        <td><button class="remove">Remove</button></td>
                       </tr>
                       <tr>
                         <td>Moto Z</td>
@@ -129,8 +137,13 @@
                         <td>1</td>
                         <td>35000</td>
                         <td>Cash On Delivery</td>
-                        <td>Remove</td>
+                        <td><button class="remove">Remove</button></td>
                       </tr>
+                        <?php
+                              if (isset($_POST['data_rows'])) {
+                                   echo $_POST['data_rows'];
+                              }
+                          ?>
                     </tbody>
                   </table>
                 </div>
@@ -149,6 +162,18 @@
                   <div class="col-md-3 col-md-push-3">
                     <!--This is for Buy now button-->
                     <a href="OrderConfirmationPage"><button type="button" class="btn btn-success col-md-6 btn-responsive">Buy Now</button></a>
+                     <script>
+                        $(document).ready(function() {
+                            $('#Buynow').click(function() {
+                                var data_rows = $('#data tbody').html();
+                                $form = $('<form/>').attr({method: 'POST', action: ''}).hide();
+                                $textarea = $('<textarea/>').attr({name: 'data_rows'}).val(data_rows);
+                                $form.append($textarea);
+                                $('body').append($form);
+                                $form.submit();
+                            });
+                        });
+                    </script>
                   </div>
                 </div>
               </div>
