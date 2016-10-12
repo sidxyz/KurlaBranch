@@ -2,12 +2,9 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Order extends  Model            
 {
-    use Notifiable;
 
     /**
      * The attributes that are mass assignable.

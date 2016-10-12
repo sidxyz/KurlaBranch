@@ -1,70 +1,59 @@
-@extends('layouts.app')
-
+@extends('frontend.layout')
+@include('frontend.partials.header1')
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
-
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/password/reset') }}">
-                        {{ csrf_field() }}
-
-                        <input type="hidden" name="token" value="{{ $token }}">
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ $email or old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-
-                                @if ($errors->has('password_confirmation'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Reset Password
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <div class="col-md-push-1 container-fluid">
+      <div class="col-md-push-1 well  col-md-10" style="border:1px solid; border-radius:0px;">
+        <!--First Part-->
+        <div class="col-md-12">
+          <h3>Reset Password</h3>
+          <br>
         </div>
+        <div class="col-md-5 " style="border:1px solid black; border-radius:2px;">
+         <form class="form-horizontal"  method="POST" action="{{ url('password/reset') }}">
+           
+           <input type="hidden" name="token" value="{{ $token }}">
+            <!-- Text input-->
+            <div class="col-md-12">
+              <br>
+            </div>
+            <div class="form-group col-md-12">
+              <div class=" col-md-10">
+                <label class="control-label" style="font-size:15px;" for="newpass">New Password</label>
+              </div>
+              <div class="col-md-11">
+                <input id="username" name="newpassword" class="form-control input-md" type="text">
+              </div>
+            </div>
+            <!-- Text input-->
+            <div class="col-md-12">
+              <br>
+            </div>
+            <div class="form-group col-md-12">
+              <div class=" col-md-10">
+                <label class="control-label" style="font-size:15px;" for="Re-enternewpassword">Re-enter New Password</label>
+              </div>
+              <div class="col-md-11">
+                <input id="username" name="Re-enternewpassword" class="form-control input-md" type="text">
+              </div>
+            </div>
+            <!-- Text input-->
+            <div class="col-md-12">
+              <br>
+            </div>
+            <div class="form-group col-md-12">
+              <div class=" col-md-8">
+                <button class="btn btn-success btn-responsive col-md-12 " type="submit" style="text-decoration: none; color:white;">Reset Password</button>
+              </div>
+            </div>
+            <div class="form-group col-md-12">
+              <div class=" col-md-10">
+                <button id="canclelink" name="canclelink" class="btn btn-success btn-responsive col-md-5">Cancle</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-</div>
+   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 @endsection

@@ -8,6 +8,12 @@ use App\Http\Requests;
 
 class PageController extends Controller
 {
+  
+  public function __construct()
+   {
+     $this->middleware('auth', ['except' => ['getActivate', 'anotherMethod','index','ProductCategoriesPage','ProductDetailsPage','CheckoutPage','SignUpPage','SignInPage','ResetPasswordPage','ResetPasswordPageReset']]);
+   }
+  
   //This if for frontend part
    public function index()
     {
@@ -43,10 +49,10 @@ class PageController extends Controller
     {
     	return view('frontend.ResetPasswordPage');
     }    
-   public function ResetPasswordPageReset()
+   /*public function ResetPasswordPageReset()
     {
     	return view('frontend.ResetPasswordPageReset');
-    }
+    }*/
 
    public function SignInPage()
     {
@@ -128,5 +134,5 @@ class PageController extends Controller
       public function StaticPages()
       {
         return view('backend.StaticPages');
-      }    
+      }        
 }

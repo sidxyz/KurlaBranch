@@ -9,17 +9,19 @@
           <br>
         </div>
         <div class="col-md-5 " style="border:1px solid black; border-radius:2px;">
-          <form class="form-horizontal col-md-12">
+         <form class="form-horizontal"  method="POST" action="{{ url('password/reset') }}">
+           
+           <input type="hidden" name="token" value="{{ $token }}">
             <!-- Text input-->
             <div class="col-md-12">
               <br>
             </div>
             <div class="form-group col-md-12">
               <div class=" col-md-10">
-                <label class="control-label" style="font-size:15px;" for="usernameL">New Password</label>
+                <label class="control-label" style="font-size:15px;" for="newpass">New Password</label>
               </div>
               <div class="col-md-11">
-                <input id="username" name="username" class="form-control input-md" type="text">
+                <input id="username" name="newpassword" class="form-control input-md" type="text">
               </div>
             </div>
             <!-- Text input-->
@@ -28,10 +30,10 @@
             </div>
             <div class="form-group col-md-12">
               <div class=" col-md-10">
-                <label class="control-label" style="font-size:15px;" for="usernameL">Re-enter New Password</label>
+                <label class="control-label" style="font-size:15px;" for="Re-enternewpassword">Re-enter New Password</label>
               </div>
               <div class="col-md-11">
-                <input id="username" name="username" class="form-control input-md" type="text">
+                <input id="username" name="Re-enternewpassword" class="form-control input-md" type="text">
               </div>
             </div>
             <!-- Text input-->
@@ -40,7 +42,7 @@
             </div>
             <div class="form-group col-md-12">
               <div class=" col-md-8">
-                <button id="resetlink" class="btn btn-success  btn-responsive col-md-12" name="resetlink"><a href="SignInPage" style="text-decoration: none;color:white;">Reset Password</a></button>
+                <button class="btn btn-success btn-responsive col-md-12 " type="submit" style="text-decoration: none; color:white;">Reset Password</button>
               </div>
             </div>
             <div class="form-group col-md-12">

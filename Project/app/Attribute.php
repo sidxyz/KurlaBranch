@@ -2,16 +2,11 @@
 
 namespace App;
 
-//use Illuminate\Notifications\Notifiable;
-//use Illuminate\Foundation\Auth\User as Authenticatable;
-
 
 use Illuminate\Database\Eloquent\Model;
 
 class Attribute extends Model
 {
-    // use Notifiable;
-
     /**
      * The attributes that are mass assignable.
      *

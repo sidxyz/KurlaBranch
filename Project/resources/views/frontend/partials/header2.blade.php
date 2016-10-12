@@ -10,7 +10,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-        <a href="index" style=" margin-left:2%; padding:15px; font-size:15px; " class="navbar-brand">&nbsp;Dashboard</a>
+        <a href="index" style=" margin-left:2%; padding:15px; font-size:15px; " class="navbar-brand">&nbsp;Home</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -37,7 +37,7 @@
     
     <li>
       <a href="ProductCategoriesPage" style=" padding:15px;" class="hvr-bounce-to-bottom"><i class="fa fa-asterisk fa-fw"></i>Sales</a>
-    </li> 
+    </li>   
             
       <li class="dropdown">
           <a href="#" class="hvr-bounce-to-bottom dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Order History
@@ -52,11 +52,17 @@
     
       <ul class="nav navbar-nav navbar-right">
          <li class="dropdown">
-          <a href="#" style="text-decoration:underline;padding:15px;" class=" hvr-bounce-to-bottom dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i></i>John
-      <span class="caret"></span></a>
+          @if(Auth::check())
+              <a href="#"  class=" hvr-bounce-to-bottom dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i></i>welcome,{{Auth::user()->first_name }}
+          <span class="caret"></span></a>
+      
           <ul class="dropdown-menu">
-            <li><a href="UserMyProfilePage">My Profile</a></li>
-            <li><a href="#">Logout</a></li>
+            <li><a href="UserMyProfilePage"> My Profile</a></li>
+            <li><a href="{{route('logout')}}"> Logout</a></li>
+             @else
+             <a href="{{route('login')}}" class="btn btn-default">Sign In</a>
+             @endif
+          
           </ul>
         </li>
       </ul>

@@ -8,6 +8,7 @@
           <h3>My Profile</h3>
           <br>
         </div>
+         @if(Auth::check())
         <div class="col-md-6 text-center">
           <form class="form-horizontal">
             <!-- Text input-->
@@ -16,7 +17,7 @@
                 <label class="control-label" style="font-size:15px;" for="Fname">First Name</label>
               </div>
               <div class="col-md-7 col-md-pull-2">
-                <input id="Fname" name="Fname" placeholder="" class="form-control input-md" type="text">
+                <input id="Fname" name="Fname" placeholder="" class="form-control input-md" type="text" readonly value="{{Auth::user()->first_name }}">
               </div>
             </div>
             <!-- Text input-->
@@ -25,7 +26,7 @@
                 <label class="control-label" style="font-size:15px;" for="Lname">Last Name</label>
               </div>
               <div class="col-md-7 col-md-pull-2">
-                <input id="Lname" name="Lname" placeholder="" class="form-control input-md" type="text">
+                <input id="Lname" name="Lname" placeholder="" class="form-control input-md" type="text" readonly value="{{Auth::user()->last_name }}">
               </div>
             </div>
             <!-- Multiple Radios (inline) -->
@@ -34,10 +35,7 @@
                 <label class="control-label" style="font-size:15px;" for="radios">Gender</label>
               </div>
               <div class=" col-md-7 col-md-pull-4">
-                <label class="radio-inline col-md-push-1" for="radios-0">
-                  <input name="radios" id="radios-0" value="male" checked="checked" style="font-size:15px;" type="radio">Male</label>
-                <label class="radio-inline col-md-push-1" for="radios-1">
-                  <input name="radios" id="radios-1" value="female" style="font-size:15px;" type="radio">Female</label>
+
               </div>
             </div>
             <div class="form-group col-md-12 ">
@@ -45,10 +43,8 @@
                 <label class="control-label" for="date">Date Of Birth</label>
               </div>
               <div class=" col-md-7 col-md-pull-2">
-                <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text">
-                <label class="input-group col-md-push-12 col-md-1" for="date">
-                  <li class="fa fa-2x fa-calendar pull-right"></li>
-                </label>
+                <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text" readonly value="{{Auth::user()->dateofbirth }}">
+                
               </div>
             </div>
             <!-- Text input-->
@@ -57,7 +53,7 @@
                 <label class="control-label" style="font-size:15px;" for="ContactNum">Contact Number</label>
               </div>
               <div class="col-md-7 col-md-pull-2">
-                <input id="ContactNum" name="ContactNum" placeholder="" class="form-control input-md" type="text">
+                <input id="ContactNum" name="ContactNum" placeholder="" class="form-control input-md" type="text" readonly value="{{Auth::user()->phone }}">
               </div>
             </div>
             <!-- Text input-->
@@ -66,86 +62,19 @@
                 <label class="control-label" style="font-size:15px;" for="email">Email Address</label>
               </div>
               <div class="col-md-7 col-md-pull-2">
-                <input id="email" name="email" placeholder="" class="form-control input-md" type="email">
+                <input id="email" name="email" placeholder="" class="form-control input-md" type="email" readonly value="{{Auth::user()->email}}">
               </div>
             </div>
             <div class="col-md-12">
               <br>
             </div>
-            <div class="form-group col-md-12 ">
-              <!-- Modal -->
-              <div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                  <div class="modal-content">
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                      <h4 style="background:color:grey; text-align:center;" class="modal-title" id="myModalLabel">Change Password</h4>
-                    </div>
-                    <!-- Modal Body -->
-                    <div class="modal-body">
-                      <div class="form-group">
-                        <label class="col-sm-2 control-label" for="newpassword">New Password</label>
-                        <div class="col-sm-5">
-                          <input type="text" class="form-control input-lg" id="newpassword">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-sm-2 control-label" for="re-enternewpassword">Re-enter New Password</label>
-                        <div class="col-sm-5">
-                          <input type="password" class="form-control input-lg" id="re-enternewpassword">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="col-sm-pull-2 col-sm-10">
-                          <button type="submit" class="btn btn-success btn-responsive">Change</button>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="col-sm-pull-2 col-sm-10">
-                          <button type="submit" class="btn btn-success btn-responsive" data-dismiss="modal">Cancle</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-success btn-success col-md-7" data-toggle="modal" data-target="#myModalNorm">Change Password</button>
-              <!-- Modal -->
-              <div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <!-- Modal Header -->
-                    <div class="modal-header" style="background-color:grey;">
-                      <h4 class="modal-title" style="text-align:center;" id="myModalLabel">Change Password</h4>
-                    </div>
-                    <!-- Modal Body -->
-                    <div class="modal-body">
-                      <div class="form-group">
-                        <label for="newpassword">New Password</label>
-                        <input type="text" class="form-control" id="newpassword">
-                      </div>
-                      <div class="form-group">
-                        <label for="re-enternewpassword">Re-enter New Password</label>
-                        <input type="password" class="form-control" id="re-enternewpassword">
-                      </div>
-                      <div class="form-group">
-                        <button type="submit" class="btn btn-success col-md-offset-2 btn-responsive">Change</button>
-                        <button type="button" class="btn btn-success col-md-offset-2 btn-responsive" data-dismiss="modal">Cancle</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>-
-              </div>
-            </div>
-          </form>
           <!-- Text input-->
-        </div>
-        <div class="col-md-6 ">
+      </div>
+      <div class="col-md-6 ">
           <!--Text Area-->
           <div class="form-group">
             <div class="col-md-2 col-md-push-8">
-              <a href="UserMyProfilePageEdit"><button type="submit" class="btn btn-success col-md-offset-2 btn-responsive">Edit</button></a>
+              <a href="UserMyProfilePageEdit"><button type="button" class="btn btn-success col-md-offset-2 btn-responsive">Edit</button></a>
             </div>
           </div>
           <div class="col-md-12">
@@ -157,7 +86,7 @@
               <label class="control-label" style="font-size:15px;" for="radios">Permanent Address</label>
             </div>
             <div class="col-md-7 col-md-pull-2">
-              <textarea rows="4" class="col-md-12" name="permanentaddress"></textarea>
+              <textarea rows="4" class="col-md-12" name="permanentaddress" readonly>{{Auth::user()->address}}</textarea>
             </div>
           </div>
           <div class="col-md-12">
@@ -166,17 +95,12 @@
               <div>
                 <br>
               </div>
-              <div class="col-md-4 col-md-pull-1">
-                <label class="control-label" style="font-size:15px;" for="radios">Pincode</label>
-              </div>
-              <div class="col-md-8 col-md-pull-1">
-                <input type="text" name="pincode" class="col-md-8 ">
-              </div>
+              
             </div>
           </div>
         </div>
-      </div>
     </div>
+    @endif
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>

@@ -9,17 +9,19 @@
           <br>
         </div>
         <div class="col-md-5 row-md-12 " style="border:1px solid black; border-radius:2px;">
-          <form class="form-horizontal">
+          
+          <form class="form-horizontal"  method="POST" action="{{ url('/ResetPasswordPage') }}">
+            {{ csrf_field() }}
             <!-- Text input-->
             <div class="col-md-12">
               <br>
             </div>
             <div class="form-group col-md-12">
               <div class=" col-md-10 	">
-                <label class="control-label" style="font-size:15px;" for="usernameL">Enter Your Username</label>
+                <label class="control-label" style="font-size:15px;" for="email">Enter Your Email</label>
               </div>
               <div class="col-md-11 ">
-                <input id="username" name="username" class="form-control input-md" type="text">
+                <input id="username" name="email" class="form-control input-md" type="text">
               </div>
             </div>
             <div class="col-md-12">
@@ -27,9 +29,10 @@
               <br>
             </div>
             <div class="form-group col-md-7">
-              <button id="resetlink" name="resetlink" class="btn btn-success btn-responsive col-md-12 col-md-push-1"><a href="ResetPasswordPageReset" style="text-decoration: none; color:white;">Send me reset password link</a></button>
+              <button class="btn btn-success btn-responsive col-md-12 " type="submit" style="text-decoration: none; color:white;">Send me reset password link</button>
             </div>
           </form>
+        
         </div>
       </div>
     </div>

@@ -36,11 +36,15 @@
 
             <ul class="nav navbar-nav navbar-right">
              <li class="dropdown">
-              <a href="#" style="text-decoration:none;padding:15px;" class=" hvr-bounce-to-bottom dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>&nbsp;Admin
+             @if(Auth::check())
+              <a href="#" style="text-decoration:none;padding:15px;" class=" hvr-bounce-to-bottom dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>&nbsp;Admin,{{Auth::user()->first_name }}
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="UserMyProfilePage">My Profile</a></li>
-                <li><a href="#">Logout</a></li>
+                 <li><a href="UserMyProfilePage"> My Profile</a></li>
+                 <li><a href="{{route('logout')}}"> Logout</a></li>
+                 @else
+                 <a href="{{route('login')}}" class="btn btn-default">Sign In</a>
+                 @endif
               </ul>
             </li>
           </ul>
