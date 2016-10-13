@@ -1,7 +1,6 @@
 @extends('backend.layout')
 @include('backend.partials.header')
 @section('content')
-
 <div class="col-md-push-1  col-md-10 container-fluid">
       <div class="col-md-12 ">
         <div class="col-md-12  text-justify well well-lg" style="border:1px solid; border-radius:0px;">
@@ -13,9 +12,9 @@
             <div class="col-md-3 col-md-push-1 ">
                	<a href="ProductsPageAddProduct"><button type="button" class="btn btn-success col-md-8 btn-responsive">Add Products</button></a>
             </div>
-          
+            
             <div class="col-md-12 table-responsive">
-              <table id="myTable" class="table  table-bordered table-striped">
+              <table id="myTable" class="table table-bordered table-striped">
                 <thead style="background-color:#bdbdbd;">
                   <tr>
                     <th>Sr No</th>
@@ -43,7 +42,7 @@
                     <td>{{ $values->created_at }}</td>
                     <td>
                     <!--<button class="btn tddata"><a href="ProductsPageEditProduct" >Edit</a></button>-->
-                    <a class="btn tddata" style="text-decoration:none;color:blue;" href="edit/{{ $values->product_id }}">Edit</a>
+                    <a class="btn tddata" style="text-decoration:none;color:blue;" href="edit/{{ $values->product_id}}">Edit</a>
                     
                     
                     <button class="btn tddata" data-toggle="modal" data-target="#myModalDele{{$values->product_id}}">Delete</button>

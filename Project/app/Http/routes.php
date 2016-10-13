@@ -50,10 +50,13 @@ Route::get('/StaticPages','PageController@StaticPages');
 
 Route::get('ProductsPageAddProduct','ProductController@create');
 Route::post('store','ProductController@store');
+Route::post('storeImg_pro','ProductController@storeImg_pro');
 Route::get('ProductsPage','ProductController@index');
 Route::get("delete/{id}","ProductController@destroy");
 Route::get('edit/{id}','ProductController@edit');
 Route::patch('edit/update/{id}','ProductController@update');
+Route::patch('edit/update_next/{id}','ProductController@update_next');
+Route::post('edit/update_next/updateImg_pro/{id}','ProductController@updateImg_pro');
 
 //Category Product List
 

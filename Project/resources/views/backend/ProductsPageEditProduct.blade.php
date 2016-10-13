@@ -9,21 +9,26 @@
               <h4>Products/Edit Products</h4>
             </label>
           </div>
-          <form class="form-horizontal" action="update/{{ $user->product_id }}" method="POST" enctype="multipart/form-data">
+          <form class="form-horizontal" action="update_next/{{ $user->product_id}}" method="POST" enctype="multipart/form-data">
 
           {{method_field('patch')}}
           
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
-          <div class="form-group col-md-3 col-md-push-4">
-            <div class="col-md-5">
-              <button class="btn btn-success">Save</button>
+
+          <div class="form-group col-md-7">
+            <div class="col-md-3">
+              <button type="submit" class="btn btn-success submit">Save:Next</button>
+              <p class="text-muted">Images</p>
             </div>
-            <div class="col-md-4" style="margin-left:8%;">
-              <button class=" btn btn-success">Cancel</button>
+            <div class="col-md-3">
+              <button class="btn btn-success"><a style="color: blue;" href="update/{{ $user->product_id}}">Save:Exit</a></button>
+            </div>
+            <div class="col-md-3" style="margin-left:8%;">
+              <button class=" btn btn-success"><a style="color: white;" href="ProductsPage">Cancel</a></button>
             </div>
           </div>
           <div class="col-md-12" style="border:1px solid; border-radius:0px;padding: 5%;">
-            <div class="col-md-6 text-center">
+            <div class="col-md-12 text-center">
               
                 <!-- Text input-->
                 <div class="form-group col-md-12">
@@ -74,75 +79,10 @@
                   </div>
                 </div>
                 <!-- Text input-->
-                <div class="form-group col-md-12">
-                  <div class="col-md-5 col-md-pull-1">
-                    <label class="control-label" style="font-size:15px;" for="Title">Ram</label>
-                  </div>
-                  <div class="col-md-7 col-md-pull-1">
-                    <input id="ram" name="ram" placeholder="" class="form-control input-md" type="text" value="2 GB">
-                  </div>
-                </div>
-                <!-- Text input-->
-                <div class="form-group col-md-12">
-                  <div class="col-md-5 col-md-pull-1">
-                    <label class="control-label" style="font-size:15px;" for="Title">Processors</label>
-                  </div>
-                  <div class="col-md-7 col-md-pull-1">
-                    <input id="processor" name="processor" placeholder="" class="form-control input-md" type="text" value="Snapdragon">
-                  </div>
-                </div>
               </form>
             </div>
-            <div class="col-md-6 text-center" style=" margin-top:-1%;">
-              <form class="form-horizontal">
-                
-                <div class="form-group col-md-12 ">
-                  <div class="col-md-3 col-md-pull-2;">
-                    <label class="control-label" for="upload">Images</label>
-                  </div>
-                  
-                   <div class="col-md-8 col-md-push-0">
-                  <div class="input-group">
-                  <input type="file" class="filestyle" name="images" id="fileupload" data-buttonText="Upload">
-                  </div>
-                </div>
- 
-              
-              </div>                <!-- Text input-->
-                <div class="form-group col-md-9">
-                <div class="col-md-10 col-md-push-4">
-                  <div id="dvPreview" style="border:1px solid; height:20%;">      
-                  </div>
-                </div>
-                <div class="col-md-2 col-md-push-3">
-                  <span class="glyphicon glyphicon-trash" id="deleteimg"></span>
-                </div>
-              </div>
-              <!-- Text input-->
-              <div class="form-group col-md-12">
-                
-                <div class="col-md-7 col-md-push-3" style="margin-left:5%;">
-                  <input id="processor" name="" placeholder="" class="col-md-9 col-md-pull-1 form-control input-md" type="text">
-                </div>
-                <div class="col-md-1 col-md-push-2  " style="margin-top:2%;">
-                  <span class="glyphicon glyphicon-trash"></span>
-                </div>
-              </div>
-                <!-- Text input-->
-                <div class="form-group col-md-12 col-md-push-1">
-                  <div class="col-md-5">
-                    <span class="glyphicon glyphicon-plus"></span>
-                  </div>
-                  <div class="col-md-8 col-md-push-1" style="margin-top:-4.2%;">
-                    <label class="col-md-12">Add more images</label>
-                  </div>
-                </div>
-              </form>
             </div>
           </div>
-        </div>
-      </div>
-</div>
 @endsection 
 @section('script')
 <script type="text/javascript">
