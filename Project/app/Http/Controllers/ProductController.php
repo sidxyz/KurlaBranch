@@ -220,7 +220,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        
+        DB::delete('delete from images where product_id = ?',array($id));
         $user = Product::find($id);
         $user->delete();
       
