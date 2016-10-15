@@ -59,7 +59,7 @@ class PageController extends Controller
     	return view('frontend.User-MyProfilePage');
     }    
 
-  /* public function UserMyProfilePageEdit()
+   public function UserMyProfilePageEdit()
     {
     	
     }
@@ -77,21 +77,6 @@ class PageController extends Controller
       return view('backend.OrderListingPage');
     }
 
-    /*public function CategoryPage()
-     {
-       return view('backend.CategoryPage');
-     } 
-
-     public function CategoryPageAddCategory()
-     {
-      return view('backend.CategoryPageAddCategory');
-     }
-
-     public function CategoryPageEditCategory()
-     {
-      return view('backend.CategoryPageEditCategory');
-     }*/
-
       public function CategoryPageListattributes()
       {
         return view('backend.CategoryPageListattributes');
@@ -102,20 +87,6 @@ class PageController extends Controller
         return view('backend.CategoryPageProductListing');
       }    
 
-     /* public function ProductsPage()
-      {
-        return view('backend.ProductsPage');
-      }    
-      
-      public function  ProductsPageAddProduct()
-      {
-        return view('backend.ProductsPageAddProduct');
-      }    
-      
-      public function ProductsPageEditProduct()
-      {
-        return view('backend.ProductsPageEditProduct');
-      }*/
       
       public function BannersPage()
       {
