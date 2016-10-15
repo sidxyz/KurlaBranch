@@ -18,13 +18,8 @@ h1,h2,h3,h4,h5,h6,div,td,thead
 .navbar
 {
 	border-radius:0px; 
-<<<<<<< HEAD
-	background-color:#bdbdbd; 
-	border-style:none; 
-=======
 	background-color:  #E6E6FA; 
 	border-style:none;
->>>>>>> cadeb0648cd50f85c949153d36c69f14bd9ce2ef
 }
 
 #head
