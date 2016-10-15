@@ -84,7 +84,7 @@ class ProductController extends Controller
                 $file_size =$_FILES['files']['size'][$key];
                 $file_tmp =$_FILES['files']['tmp_name'][$key];
                 $file_type=$_FILES['files']['type'][$key];  
-                if($file_size > 2097152){
+                if($file_size > 20097152){
                     $errors[]='File size must be less than 2 MB';
                 } 
 
