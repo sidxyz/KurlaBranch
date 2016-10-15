@@ -4,7 +4,7 @@
 				<strong>Successfully:</strong>{{ Session::get('update') }}
 			</div>
   @endif
-
+<h1>im there</h1>
   @if( count($errors)>0 )
 			<div class="alert alert-danger" role="alert">
      			<button type="button"  class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

@@ -30,15 +30,20 @@
                 <input id="Lname" name="Lname" placeholder="" class="form-control input-md" type="text" readonly value="{{Auth::user()->last_name }}">
               </div>
             </div>
-            <!-- Multiple Radios (inline) -->
-              <div class="form-group col-md-12">
+                        <!-- Multiple Radios (inline) -->
+            <div class="form-group col-md-12">
               <div class="col-md-5 col-md-pull-1">
                 <label class="control-label" style="font-size:15px;" for="radios">Gender</label>
               </div>
-              <div class=" col-md-7 col-md-pull-2">
-              <input id="Lname" name="Lname" placeholder="" class="form-control input-md" type="text" readonly value="{{Auth::user()->gender}}">
-              </div>
+              <div class=" col-md-7 col-md-pull-4" >
+                <label class="radio-inline col-md-push-1" for="radios-0">
+                      <input name="male" id="radios-0" value="male"  style="font-size:15px;" type="radio" @if( Auth::user()->gender=="male" ) checked="checked" @else   @endif>Male</label>
+                  <label class="radio-inline col-md-push-1" for="radios-1">
+                      <input name="female" id="radios-1" value="female" style="font-size:15px;" type="radio" @if( Auth::user()->gender=="female") checked="checked" @else @endif>Female</label>
+                  </div>
+              
             </div>
+
 
             <div class="form-group col-md-12 ">
               <div class="col-md-5 col-md-pull-1">
