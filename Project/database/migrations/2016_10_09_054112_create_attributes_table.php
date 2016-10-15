@@ -16,6 +16,7 @@ class CreateAttributesTable extends Migration
          Schema::create('attributes', function (Blueprint $table) {
             $table->increments('attribute_id');
             $table->string('attribute_name');
+            $table->string('category_name');
             $table->integer('category_id');
             $table->timestamps();
         });
@@ -28,6 +29,6 @@ class CreateAttributesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('attributes');
     }
 }

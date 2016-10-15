@@ -16,20 +16,24 @@ class Attribute extends Model
     //     'attribute_name', 'attribute_value','category_id'
     // ];
     protected $primaryKey='attribute_id';
-    protected $fillable = ['attribute_name','category_id'];
+    protected $fillable = ['attribute_name','category_id','category_name'];
 
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
-     */
+     */ 
     protected $hidden = [
         'password', 'remember_token',
     ];
 
      public function Attribute()
     {
-    return $this->belongsTo(categories::class);
+    return $this->belongsTo(Category::class);
+    }
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
     }
 
 }

@@ -85,7 +85,7 @@ Route::post('editattr/{id}','AttributeController@editattr');
 Route::patch('editattr/updateattr/{id}','AttributeController@updateattr');
 
 
-
+Route::get('ProductAttributeValue','ProductController@getAttributes');
 
 //end Attributes
 

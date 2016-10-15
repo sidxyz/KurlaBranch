@@ -24,9 +24,14 @@ class Product extends Model
      public function Product()
 {
     return $this->hasMany(orders::class);
-    return $this->hasMany(Image::class);
+    //return $this->hasMany(Image::class);
+   // return $this->hasMany(Attribute::class);
     return $this->belongsTo(categories::class);
 }
+public function attribute()
+    {
+        return $this->hasMany(Attribute::class);
+    }
     
     public function setImage()
     {

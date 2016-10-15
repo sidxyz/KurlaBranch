@@ -14,6 +14,10 @@ use App\Product;
 
 use App\Image;
 
+use App\Attribute;
+
+use Illuminate\Support\Facades\Input;
+
 class ProductController extends Controller
 {
     /**
@@ -40,7 +44,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view ('backend.ProductsPageAddProduct');
+        $product_id= Input::get('product_id');
+        // dd(array('product_id' => $product_id,
+        //           'category_name' => $category_name));
+        return view ('backend.ProductsPageAddProduct')->with(array('product_id' => $product_id));
     }
     
 
@@ -53,14 +60,17 @@ class ProductController extends Controller
     public function store(Request $request)
     {
 
-        Product::create(Request::all());
-
-        $product = new Product;
-        $productArray =$product->all()->pluck('product_id');
-        $arraySize = count($productArray);
-        $product_id = $productArray[$arraySize-1];
-
-        return view("backend.ProductsPageAddProductImage",compact('product_id'));
+        $product=Product::create(Request::all());
+        $product_id=$product->product_id;
+        $category_name=$product->category_name;
+        $pass=Product()->attribute()->attribute_id;
+        dd($pass);
+        // $product = new Product;
+        // $productArray =$product->all()->pluck('product_id');
+        // $arraySize = count($productArray);
+        // $product_id = $productArray[$arraySize-1];
+        //dd((array('product_id' => $product_id,'category_name'=>$category_name)));
+        return view("backend.ProductsPageAddProductImage")->with(array('product_id' => $product_id,'category_name'=>$category_name));
     }
 
     public function storeImg_pro(/*Request $request*/)
@@ -236,6 +246,10 @@ class ProductController extends Controller
         return redirect('CategoryPageProductListing')->with('message','deleted');
     }
 
+    public function getAttributes()
+    {
+        return view('backend.ProductAttributeValue');
+    }
     // public function editReassign($id)
     // {
     //     $user=Product::find($id);

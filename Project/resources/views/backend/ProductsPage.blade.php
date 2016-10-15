@@ -10,7 +10,17 @@
             </div>
           
             <div class="col-md-3 col-md-push-1 ">
-               	<a href="ProductsPageAddProduct"><button type="button" class="btn btn-success col-md-8 btn-responsive">Add Products</button></a>
+
+ @foreach($user as $values)
+                <form type="POST" action="ProductsPageAddProduct">
+
+                <input type="hidden" name="product_id" value="{{ $values->product_id }}">
+                <input type="hidden" name="category_name" value="{{ $values->category_name }}">
+                @endforeach
+               	<button type="submit" class="btn btn-success col-md-8 btn-responsive">Add Products</button>
+
+                </form>
+ 
             </div>
             
             <div class="col-md-12 table-responsive">
@@ -44,6 +54,7 @@
                     <!--<button class="btn tddata"><a href="ProductsPageEditProduct" >Edit</a></button>-->
                     <a class="btn tddata" style="text-decoration:none;color:blue;" href="edit/{{ $values->product_id}}">Edit</a>
                     
+
                     
                     <button class="btn tddata" data-toggle="modal" data-target="#myModalDele{{$values->product_id}}">Delete</button>
 

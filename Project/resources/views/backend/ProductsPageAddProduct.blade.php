@@ -6,7 +6,7 @@
         <div class="col-md-12  text-justify well well-lg" style="border:1px solid; border-radius:0px;">
           <div class="col-md-12">
             <label>
-              <h4>Products/Add Products</h4>
+              <h4>Products/Add Products  Product ID : {{ $product_id }}</h4>
             </label>
           </div>
           <div class="col-md-12" style="border:1px solid; border-radius:0px; padding: 5%;">
