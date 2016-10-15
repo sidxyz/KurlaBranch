@@ -29,4 +29,18 @@ class PasswordController extends Controller
     {
         $this->middleware('guest');
     }
+
+
+ /*For directly login the reset page without the mail conformation randomly generate tokes
+ public function showResetForm( $token = null )
+    {
+        if (auth()->check() && is_null( $token )) { 
+             // user is logged in and has no token, in other words, he/she access this route by 
+             // clicking a link pointing to "password/reset", so we generate a new token and save it 
+             // to the password_resets table
+            $token = \Password::getRepository()->create( auth()->user() );
+        }
+
+        return view( 'auth.passwords.reset' )->with( 'token', $token );
+    }*/
 }

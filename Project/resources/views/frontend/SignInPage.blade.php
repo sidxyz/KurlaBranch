@@ -17,7 +17,7 @@
               <div class="col-md-12">
                 <br>
               </div>
-              <div class="form-group col-md-12">
+              <div class="form-group col-md-12 {{ $errors->has('email') ? ' has-error' : '' }}">
                 <div class=" col-md-5 col-md-push-3">
                   <label class="control-label" style="font-size:20px;" for="emailid">Email Id</label>
                 </div>
@@ -25,14 +25,19 @@
                   <br>
                 </div>
                 <div class="col-md-11">
-                  <input id="emailid" name="email" class="form-control input-md" type="text">
+                  <input id="emailid" name="email" class="form-control input-md" type="text" value="{{ old('email') }}" required>
+                        @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                        @endif
                 </div>
               </div>
               <!-- Text input-->
               <div class="col-md-12">
                 <br>
               </div>
-              <div class="form-group col-md-12">
+              <div class="form-group col-md-12 {{ $errors->has('password') ? ' has-error' : '' }} ">
                 <div class=" col-md-10 col-md-push-3">
                   <label class="control-label" style="font-size:20px;" for="usernameL">Password</label>
                 </div>
@@ -40,7 +45,12 @@
                   <br>
                 </div>
                 <div class="col-md-11">
-                  <input id="password" name="password" class="form-control input-md" type="password">
+                  <input id="password" name="password" class="form-control input-md" type="password" required>
+                   @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
                 </div>
               </div>
               <!-- Text input-->
@@ -54,7 +64,7 @@
               </div>
               <div class="form-group col-md-12">
                 <div class="col-md-12 col-md-push-4">
-                    <a class="btn btn-link col-md-8 col-md-pull-2"  style="font-size:17px; color:#1e88e5;text-decoration:underline;" href="{{url('password/reset')}}">Forgot Password?</a>
+                    <a class="btn btn-link col-md-8 col-md-pull-2"  style="font-size:17px; color:#1e88e5;text-decoration:underline;" href="{{url('reset')}}">Forgot Password?</a>
                 </div>
                 <div class="col-md-12"> 
                 <br/>
@@ -62,7 +72,6 @@
               </div>      
               </div>
           </form>
-       
 
         </div>
       </div>

@@ -9,14 +9,16 @@
           <br>
         </div>
         <div class="col-md-6 text-center">
-          <form class="form-horizontal">
-            <!-- Text input-->
+
+            <form class="form-horizontal" action="UserMyProfilePageEdit/{{Auth::user()->user_id}}" method="get">
+             <input type="hidden" name="token" value="{{ csrf_token() }}">
+          <!-- Text input-->
             <div class="form-group col-md-12">
               <div class="col-md-5 col-md-pull-1">
                 <label class="control-label" style="font-size:15px;" for="Fname">First Name</label>
               </div>
               <div class="col-md-7 col-md-pull-2">
-                <input id="Fname" name="Fname" placeholder="" class="form-control input-md" type="text">
+                <input id="Fname" name="firstname" placeholder="" class="form-control input-md" type="text" required>
               </div>
             </div>
             <!-- Text input-->
@@ -25,7 +27,7 @@
                 <label class="control-label" style="font-size:15px;" for="Lname">Last Name</label>
               </div>
               <div class="col-md-7 col-md-pull-2">
-                <input id="Lname" name="Lname" placeholder="" class="form-control input-md" type="text">
+                <input id="Lname" name="lastname" placeholder="" class="form-control input-md" type="text" required>
               </div>
             </div>
             <!-- Multiple Radios (inline) -->
@@ -35,9 +37,9 @@
               </div>
               <div class=" col-md-7 col-md-pull-4">
                 <label class="radio-inline col-md-push-1" for="radios-0">
-                  <input name="radios" id="radios-0" value="male" checked="checked" style="font-size:15px;" type="radio">Male</label>
+                  <input name="male" id="radios-0" value="male" checked="checked" style="font-size:15px;" type="radio">Male</label>
                 <label class="radio-inline col-md-push-1" for="radios-1">
-                  <input name="radios" id="radios-1" value="female" style="font-size:15px;" type="radio">Female</label>
+                  <input name="female" id="radios-1" value="female" style="font-size:15px;" type="radio">Female</label>
               </div>
             </div>
             <div class="form-group col-md-12 ">
@@ -45,7 +47,7 @@
                 <label class="control-label" for="date">Date Of Birth</label>
               </div>
               <div class=" col-md-7 col-md-pull-2">
-                <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text">
+                <input class="form-control" id="date" name="dateofbirth" placeholder="MM/DD/YYYY" type="text" required>
                 <label class="input-group col-md-push-12 col-md-1" for="date">
                   <li class="fa fa-2x fa-calendar pull-right"></li>
                 </label>
@@ -57,7 +59,7 @@
                 <label class="control-label" style="font-size:15px;" for="ContactNum">Contact Number</label>
               </div>
               <div class="col-md-7 col-md-pull-2">
-                <input id="ContactNum" name="ContactNum" placeholder="" class="form-control input-md" type="text">
+                <input id="ContactNum" name="phone" placeholder="" class="form-control input-md" type="text" required>
               </div>
             </div>
             <!-- Text input-->
@@ -66,10 +68,9 @@
                 <label class="control-label" style="font-size:15px;" for="email">Email Address</label>
               </div>
               <div class="col-md-7 col-md-pull-2">
-                <input id="email" name="email" placeholder="" class="form-control input-md" type="email">
+                <input id="email" name="email" placeholder="" class="form-control input-md" type="email" required>
               </div>
             </div>
-          </form>
         </div>
         <div class="col-md-6 ">
           <!--Text Area-->
@@ -78,21 +79,7 @@
               <label class="control-label" style="font-size:15px;" for="radios">Permanent Address</label>
             </div>
             <div class="col-md-7 col-md-pull-2">
-              <textarea rows="4" class="col-md-12" name="permanentaddress"></textarea>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <!--Pincode-->
-            <div class="form-group">
-              <div>
-                <br>
-              </div>
-              <div class="col-md-4 col-md-pull-1">
-                <label class="control-label" style="font-size:15px;" for="radios">Pincode</label>
-              </div>
-              <div class="col-md-8 col-md-pull-1">
-                <input type="text" name="pincode" class="col-md-8 ">
-              </div>
+              <textarea rows="4" class="col-md-12" name="address" required></textarea>
             </div>
           </div>
           <!-- Button -->
@@ -100,14 +87,15 @@
             <!--DoBreak-->
             <br>
             <div class="form-group col-md-7 col-md-pull-1 ">
-              <button id="save" name="save" class="btn btn-success">Save</button>
+              <button id="save" name="save" class="btn btn-success" type="submit">Save</button>
             </div>
             <!-- Button -->
             <div class="form-group col-md-5 col-md-pull-4">
-              <button id="cancle" name="cancle" class="btn btn-success">Cancle</button>
+              <button id="cancle" name="cancle" class="btn btn-success"><a href="{{url('UserMyProfilePage')}}" style="text-decoration:none ;color:white;">Cancle</a></button>
             </div>
           </div>
         </div>
+      </form>
       </div>
     </div>
    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>

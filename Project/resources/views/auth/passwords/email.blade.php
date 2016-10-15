@@ -7,6 +7,13 @@
         <div class="col-md-12">
           <h3>Reset Password</h3>
           <br>
+
+          @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+        
         </div>
         <div class="col-md-5 row-md-12 " style="border:1px solid black; border-radius:2px;">
           
@@ -16,12 +23,17 @@
             <div class="col-md-12">
               <br>
             </div>
-            <div class="form-group col-md-12">
+            <div class="fform-group col-md-12 {{ $errors->has('email') ? ' has-error' : '' }}">
               <div class=" col-md-10 	">
                 <label class="control-label" style="font-size:15px;" for="email">Enter Your Email</label>
               </div>
               <div class="col-md-11 ">
-                <input id="username" name="email" class="form-control input-md" type="text">
+                <input id="username" name="email" class="form-control input-md" type="text" value="{{ old('email') }}">
+                 @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
               </div>
             </div>
             <div class="col-md-12">

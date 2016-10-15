@@ -11,7 +11,7 @@ class PageController extends Controller
   
   public function __construct()
    {
-     $this->middleware('auth', ['except' => ['getActivate', 'anotherMethod','index','ProductCategoriesPage','ProductDetailsPage','CheckoutPage','SignUpPage','SignInPage','ResetPasswordPage','ResetPasswordPageReset']]);
+     $this->middleware('auth', ['except' => ['getActivate', 'anotherMethod','index','ProductCategoriesPage','ProductDetailsPage','CheckoutPage','SignUpPage','SignInPage']]);
    }
   
   //This if for frontend part
@@ -45,15 +45,6 @@ class PageController extends Controller
     	return view('frontend.SignUpPage');
     }
 
-   public function ResetPasswordPage()
-    {
-    	return view('frontend.ResetPasswordPage');
-    }    
-   /*public function ResetPasswordPageReset()
-    {
-    	return view('frontend.ResetPasswordPageReset');
-    }*/
-
    public function SignInPage()
     {
     	return view('frontend.SignInPage');
@@ -68,9 +59,9 @@ class PageController extends Controller
     	return view('frontend.User-MyProfilePage');
     }    
 
-   public function UserMyProfilePageEdit()
+  /* public function UserMyProfilePageEdit()
     {
-    	return view('frontend.User-MyProfilePage-Edit');
+    	
     }
 
     //This part is now for backed part
