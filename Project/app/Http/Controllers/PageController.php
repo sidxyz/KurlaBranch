@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Setting;
+
 class PageController extends Controller
 {
   
@@ -15,14 +17,32 @@ class PageController extends Controller
    }
   
   //This if for frontend part
-   public function index()
-    {
-    	return view('frontend.index');
+  public function index()
+    { 
+      $setting = new Setting;
+      $settingsObject = $setting->all()->pluck('Value');
+      $count = count($settingsObject);
+      // $settingsArray
+      for($i = 0 ; $i < $count ; $i++ )
+      {
+        $settingsArray[$i] = $settingsObject[$i]; 
+      }
+      
+      return view('frontend.index',compact('settingsArray'));
     }
 
    public function ProductCategoriesPage()
     {
-    	return view('frontend.ProductCategoriesPage');
+      $setting = new Setting;
+      $settingsObject = $setting->all()->pluck('Value');
+      $count = count($settingsObject);
+      // $settingsArray
+      for($i = 0 ; $i < $count ; $i++ )
+      {
+        $settingsArray[$i] = $settingsObject[$i]; 
+      }
+
+      return view('frontend.ProductCategoriesPage',compact('settingsArray'));
     }
 
    public function ProductDetailsPage()
