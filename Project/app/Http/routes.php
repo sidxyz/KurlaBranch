@@ -74,6 +74,20 @@ Route::get("deletecat/{id}","CategoryController@destroycat");
 Route::get('editcat/{id}','CategoryController@editcat');
 Route::patch('editcat/updatecat/{id}','CategoryController@updatecat');
 
+//For Attributes
+
+
+Route::post('CategoryPageListattributes','AttributeController@indexattr');
+Route::post('AddAttributes','AttributeController@createattr');
+Route::post('storeattr','AttributeController@storeattr');
+Route::get("deleteattr/{id}","AttributeController@destroyattr");
+Route::post('editattr/{id}','AttributeController@editattr');
+Route::patch('editattr/updateattr/{id}','AttributeController@updateattr');
+
+
+
+
+//end Attributes
 
 
 Route::group(['middleware' => ['web']], function () 
