@@ -19,7 +19,7 @@
                 <label class="control-label" style="font-size:15px;" for="firstname">First Name</label>
               </div>
               <div class="col-md-7 col-md-pull-2">
-                <input id="Fname" name="firstname" placeholder="" class="form-control input-md" type="text">
+                <input id="Fname" name="firstname" placeholder="" class="form-control input-md" type="text" required>
               </div>
             </div>
             <!-- Text input-->
@@ -28,7 +28,7 @@
                 <label class="control-label" style="font-size:15px;" for="lastname">Last Name</label>
               </div>
               <div class="col-md-7 col-md-pull-2">
-                <input id="Lname" name="lastname" placeholder="" class="form-control input-md" type="text">
+                <input id="Lname" name="lastname" placeholder="" class="form-control input-md" type="text" required>
               </div>
             </div>
             <!-- Multiple Radios (inline) -->
@@ -48,7 +48,7 @@
                 <label class="control-label" for="dob">Date Of Birth</label>
               </div>
               <div class=" col-md-7 col-md-pull-2">
-                <input class="form-control" id="date" name="dob" placeholder="MM/DD/YYYY" type="text">
+                <input class="form-control" id="date" name="dob" placeholder="MM/DD/YYYY" type="text" required>
                 <label class="input-group col-md-push-12 col-md-1" for="date">
                   <li class="fa fa-2x fa-calendar pull-right"></li>
                 </label>
@@ -60,7 +60,7 @@
                 <label class="control-label" style="font-size:15px;" for="phone">Contact Number</label>
               </div>
               <div class="col-md-7 col-md-pull-2">
-                <input id="ContactNum" name="phone" placeholder="" class="form-control input-md" type="text">
+                <input id="ContactNum" name="phone" placeholder="" class="form-control input-md" type="text" required>
               </div>
             </div>
             <!-- Text input-->
@@ -69,7 +69,7 @@
                 <label class="control-label" style="font-size:15px;" for="email">Email</label>
               </div>
               <div class="col-md-7 col-md-pull-2">
-                <input id="email" name="email" placeholder="" class="form-control input-md" type="email">
+                <input id="email" name="email" placeholder="" class="form-control input-md" type="email" required>
               </div>
             </div>
             <!-- Text input-->
@@ -78,7 +78,7 @@
                 <label class="control-label" style="font-size:15px;" for="password">Password</label>
               </div>
               <div class="col-md-7 col-md-pull-2">
-                <input id="password" name="password" placeholder="" class="form-control input-md" type="password">
+                <input id="password" name="password" placeholder="" class="form-control input-md" type="password" required>
               </div>
             </div>
             <!-- Text input-->
@@ -87,7 +87,7 @@
                 <label class="control-label" style="font-size:15px;" for="Re-password">Re-enter Password</label>
               </div>
               <div class="col-md-7 col-md-pull-2">
-                <input id="Re-password" name="Re-password" placeholder="" class="form-control input-md" type="password">
+                <input id="Re-password" name="Re-password" placeholder="" class="form-control input-md" type="password" required>
               </div>
             </div>
 
@@ -97,7 +97,7 @@
                   <label class="control-label" style="font-size:15px;" for="address">Permanent Address</label>
                 </div>
                 <div class="col-md-7 col-md-pull-2">
-                  <textarea rows="4" class="col-md-12" name="address"></textarea>
+                  <textarea rows="4" class="col-md-12" name="address" required></textarea>
                 </div>
               </div>
               <!-- Button -->

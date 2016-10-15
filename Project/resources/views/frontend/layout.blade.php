@@ -20,6 +20,8 @@
 	</head>
 	<body>
 		@yield('content')
+		@include('frontend.partials._messages')
+	
 		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
@@ -34,7 +36,5 @@
 	    <script type="text/javascript" src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js')}}"></script>
 
 	    <script type="text/javascript" src="{{asset('js/datepicker.js')}}"></script>
-   
-
-	</body>
+   	</body>
 </html>

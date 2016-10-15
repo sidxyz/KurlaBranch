@@ -1,17 +1,18 @@
 @extends('frontend.layout')
 @include('frontend.partials.header3')
 @section('content')
+
     <div class="col-md-push-1 container-fluid">
       <div class="col-md-push-1 well  col-md-10" style="border:1px solid; border-radius:0px;">
-        <!--First Part-->
+      <!--First Part-->
         <div class="col-md-8" style="margin-top:-2.6%;margin-left:-2%;">
           <h3>My Profile</h3>
           <br>
         </div>
          @if(Auth::check())
-        <div class="col-md-6 text-center">
+         <div class="col-md-6 text-center">
           <form class="form-horizontal">
-            <!-- Text input-->
+                  <!-- Text input-->
             <div class="form-group col-md-12">
               <div class="col-md-5 col-md-pull-1">
                 <label class="control-label" style="font-size:15px;" for="Fname">First Name</label>
@@ -30,14 +31,15 @@
               </div>
             </div>
             <!-- Multiple Radios (inline) -->
-            <div class="form-group col-md-12">
+              <div class="form-group col-md-12">
               <div class="col-md-5 col-md-pull-1">
                 <label class="control-label" style="font-size:15px;" for="radios">Gender</label>
               </div>
-              <div class=" col-md-7 col-md-pull-4">
-
+              <div class=" col-md-7 col-md-pull-2">
+              <input id="Lname" name="Lname" placeholder="" class="form-control input-md" type="text" readonly value="{{Auth::user()->gender}}">
               </div>
             </div>
+
             <div class="form-group col-md-12 ">
               <div class="col-md-5 col-md-pull-1">
                 <label class="control-label" for="date">Date Of Birth</label>
