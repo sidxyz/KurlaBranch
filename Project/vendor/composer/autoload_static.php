@@ -314,11 +314,9 @@ class ComposerStaticInit3b63796584bfa86185e09555d18a3554
         'ClassPreloader\\Parser\\StrictTypesVisitor' => __DIR__ . '/..' . '/classpreloader/classpreloader/src/Parser/StrictTypesVisitor.php',
         'CreateAttributesTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_09_054112_create_attributes_table.php',
         'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_09_054037_create_categories_table.php',
-=======
         'CreateAttributesTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_09_054112_create_attributes_table.php',
         'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_09_054037_create_categories_table.php',
         'CreateExtraTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_15_055021_create_extra_table.php',
->>>>>>> cadeb0648cd50f85c949153d36c69f14bd9ce2ef
         'CreateImagesTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_12_092023_create_images_table.php',
         'CreateOrdersTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_09_053830_create_orders_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
