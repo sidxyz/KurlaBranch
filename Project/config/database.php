@@ -55,8 +55,8 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'logintest'),
+            'port' => env('DB_PORT', '8037'),
+            'database' => env('DB_DATABASE', 'ecommerce'),
             'username' => env('DB_USERNAME', 'root'),
             'password' => env('DB_PASSWORD', 'root'),
             'charset' => 'utf8',

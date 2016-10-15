@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
 
-class CreateAttributesTable extends Migration
+class CreateExtraTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateAttributesTable extends Migration
      */
     public function up()
     {
-         Schema::create('attributes', function (Blueprint $table) {
-            $table->increments('attribute_id');
+        Schema::create('extras', function (Blueprint $table) {
+            $table->increments('extra_id');
             $table->string('attribute_name');
-            $table->integer('category_id');
+            $table->string('attribute_value');
+            $table->Integer('product_id');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateAttributesTable extends Migration
      */
     public function down()
     {
-        //
+         Schema::drop('extras');
     }
 }

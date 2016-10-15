@@ -2,9 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Attribute;
+
+
+use Request;
+
+//use Illuminate\Http\Request;
 
 use App\Http\Requests;
+
+use Illuminate\Support\Facades\Input;
+
+use View;
 
 class AttributeController extends Controller
 {
@@ -13,9 +22,16 @@ class AttributeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function indexattr()
     {
-        //
+        $attr = Attribute::all();
+        $category_id= Input::get('category_id');
+        $category_name= Input::get('category_name');
+         // $data = array('category_id' => $category_id,
+         //          'category_name' => $category_name);
+
+        return view('backend.CategoryPageListattributes',compact("attr"))->with(array('category_id' => $category_id,
+                  'category_name' => $category_name));
     }
 
     /**
@@ -23,9 +39,15 @@ class AttributeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createattr()
     {
-        //
+        $category_id= Input::get('category_id');
+        $category_name= Input::get('category_name');
+         // $data = array('category_id' => $category_id,
+         //          'category_name' => $category_name);
+
+        return view('backend.AddAttributes')->with(array('category_id' => $category_id,
+                  'category_name' => $category_name));
     }
 
     /**
@@ -34,10 +56,27 @@ class AttributeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeattr(Request $request)
     {
-        //
+            Attribute::create(Request::all());
+         $category_id= Input::get('category_id');
+        $category_name= Input::get('category_name');
+         // $data = array('category_id' => $category_id,
+         //          'category_name' => $category_name);
+        // dd((array('category_id' => $category_id,
+        // //           'category_name' => $category_name)));
+        return redirect( 'CategoryPageListattributes')->with( 'category_id', $category_id )->with('category_name',$category_name);
+        // return redirect("CategoryPageListattributes")->with(array('category_id' => $category_id,
+        //           'category_name' => $category_name));
+        // $category_name= Input::get('category_name');
+        // $category_id= Input::get('category_id');
+        // $attribute = new Attribute;
+        // $attribute->attribute_name = Input::get('attribute_name');
+        // $attribute->category_id= Input::get('category_id');
+        // $attribute->save();
+        // return redirect('CategoryPageListattributes')->with('category_id', $category_id)->with('category_name', $category_name);
     }
+
 
     /**
      * Display the specified resource.
@@ -56,9 +95,15 @@ class AttributeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editattr($id)
     {
-        //
+         $attr=Attribute::find($id);
+         $category_id= Input::get('category_id');
+         $category_name= Input::get('category_name');
+         $data = array('category_id' => $category_id,
+                  'category_name' => $category_name);
+        
+        return view("backend.EditAttributes",compact("attr"))->with($data);
     }
 
     /**
@@ -68,9 +113,16 @@ class AttributeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function updateattr(Request $request, $id)
     {
-        //
+         $category_id= Input::get('category_id');
+        $category_name= Input::get('category_name');
+         $data = array('category_id' => $category_id,
+                  'category_name' => $category_name);
+         $attr = Attribute::find($id);
+        $attr->update(Request::all());
+        $attr->save();
+        return redirect('CategoryPageListattributes')->with($data);
     }
 
     /**
@@ -79,8 +131,10 @@ class AttributeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroyattr($id)
     {
-        //
+         $attr = Attribute::find($id);
+        $attr->delete();
+        return redirect('CategoryPageListattributes')->with('message','deleted');
     }
 }
