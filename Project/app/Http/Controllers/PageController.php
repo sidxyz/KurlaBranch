@@ -28,7 +28,7 @@ class PageController extends Controller
         $settingsArray[$i] = $settingsObject[$i]; 
       }
       
-      return view('frontend.index',compact('settingsArray'));
+      return view('frontend.index',compact('settingsArray[]'));
     }
 
    public function ProductCategoriesPage()
