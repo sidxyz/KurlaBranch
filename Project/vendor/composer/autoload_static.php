@@ -265,7 +265,6 @@ class ComposerStaticInit3b63796584bfa86185e09555d18a3554
     );
 
     public static $classMap = array (
-<<<<<<< HEAD
         'App\\Attribute' => __DIR__ . '/../..' . '/app/Attribute.php',
         'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
         'App\\Console\\Commands\\Inspire' => __DIR__ . '/../..' . '/app/Console/Commands/Inspire.php',
