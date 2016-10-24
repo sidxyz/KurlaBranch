@@ -17,8 +17,7 @@
                 <input type="hidden" name="product_id" value="{{ $values->product_id }}">
                 <input type="hidden" name="category_name" value="{{ $values->category_name }}">
                 @endforeach
-               	<button type="submit" class="btn btn-success col-md-8 btn-responsive">Add Products</button>
-
+               	  <button type="submit" class="btn btn-success col-md-8 btn-responsive">Add Products</button>
                 </form>
  
             </div>
