@@ -4,82 +4,19 @@
     <div class=" colo-md-10 container-fluid">
       <div class="row">
         <div class="col-md-10 col-md-push-1">
+          @if(!Auth::check())          
           <!--Upper part-->
           <div class="col-md-12  text-justify well well-lg" style="border:1px solid; border-radius:0px;">
             <h5>You Must Login Sign Up before You can buy the product</h5>
             <div>
               <br>
             </div>
-            <!-- Modal -->
-            <div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                  <!-- Modal Header -->
-                  <div class="modal-header">
-                    <h4 style="background:color:grey; text-align:center;" class="modal-title" id="myModalLabel">Login</h4>
-                  </div>
-                  <!-- Modal Body -->
-                  <div class="modal-body">
-                    <form class="form-horizontal" role="form">
-                      <div class="form-group">
-                        <label class="col-sm-2 control-label" for="inputuser">Username</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control input-lg" id="inputuser" placeholder="Username">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-sm-2 control-label" for="inputPassword3">Password</label>
-                        <div class="col-sm-10">
-                          <input type="password" class="form-control input-lg" id="inputPassword3" placeholder="Password">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                          <button type="submit" class="btn btn-success btn-responsive">Sign in</button>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                          <button type="submit" class="btn btn-success btn-responsive" data-dismiss="modal">Cancle</button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-success btn-default col-md-1" data-toggle="modal" data-target="#myModalNorm">Login</button>
-            <!-- Modal -->
-            <div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <!-- Modal Header -->
-                  <div class="modal-header" style="background-color:grey;">
-                    <h4 class="modal-title" style="text-align:center;" id="myModalLabel">Login</h4>
-                  </div>
-                  <!-- Modal Body -->
-                  <div class="modal-body">
-                    <form role="form">
-                      <div class="form-group">
-                        <label for="exampleInputusername">Username</label>
-                        <input type="text" class="form-control" id="exampleInputusername" placeholder="Enter username">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                      </div>
-                      <div class="form-group">
-                        <button type="submit" class="btn btn-success col-md-offset-3 btn-responsive">Sing in</button>
-                        <button type="button" class="btn btn-success col-md-offset-2 btn-responsive" data-dismiss="modal">Cancle</button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <a href="SignInPage"><button type="button" class="btn btn-success btn-default col-md-1">Sign in</button></a>
+
             <a href="SignUpPage"><button type="button" class="btn btn-success btn-responsive col-md-1 col-md-push-1">Sign Up</button></a>
           </div>
+          @endif
         </div>
         <div class=" colo-md-10 container-fluid">
           <div class="row">

@@ -33,23 +33,45 @@
             
             <div class="col-md-3 col-md-push-1" style=" border:1px solid;margin-top:5%; width: 27%;height:30%;">
               <lable>
-                <b>Most Sold Products</b>
+                  <h4>Most Sold Products</h4>
               </lable>
-              <p style="margin-top:10%;">List 10 Products</p>
+
+              <ul class="nav nav-pills nav-stacked">
+                <li><img src="img/SoldProducts1.jpg" class="img-responsive center-block col-md-4" style="height:100px; width:80px; margin-left:-10%;"></li>
+               
+                <li><img src="img/SoldProducts2.jpg" class="img-responsive center-block col-md-4" style="height:100px; width:80px;"></li>
+
+                <li><img src="img/SoldProducts3.jpg" class="img-responsive center-block col-md-3" style="height:100px; width:80px;"></li>
+              </ul>
+
             </div>
             
             <div class="col-md-3 col-md-push-2" style=" border:1px solid; margin-top: 5%; width:27% ;height:30%;">
               <lable>
-                <b>Most Profitable Products</b>
+                <h4>Most Profitable Products</h4>
               </lable>
-              <p style="margin-top:10%;">List 10 Products</p>
+
+              <ul class="nav nav-pills nav-stacked">
+                <li><img src="img/MostProfitable1.jpg" class="img-responsive center-block col-md-6" style="height:100px; margin-left:-10%;"></li>
+               
+                <li><img src="img/MostProfitable2.jpg" class="img-responsive center-block col-md-6" style="height:100px;"></li>
+              </ul>
+
+
             </div>
             
             <div class="col-md-3 col-md-push-3 " style=" border:1px solid; margin-top: 5%; width: 27%;height:30%;">
               <lable>
-                <b>Most Important Clients</b>
+                <h4>Most Important Clients</h4>
               </lable>
-              <p style="margin-top:10%;">List 10 Clients</p>
+
+              <ul class="nav nav-pills nav-stacked">
+                <li><img src="img/MostImportant1.jpg" class="img-responsive center-block col-md-5" style="height:100px;  margin-left:-10%;"></li>
+               
+                <li><img src="img/MostImportant2.jpg" class="img-responsive center-block col-md-7" style="height:100px;"></li>
+              </ul>
+
+
             </div>
           
           </div>
