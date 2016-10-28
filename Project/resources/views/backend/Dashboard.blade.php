@@ -1,6 +1,7 @@
 @extends('backend.layout')
 @include('backend.partials.header')
 @section('content')
+ 
     <div class="col-md-push-1  col-md-10 container-fluid">
       <div class="col-md-12 ">
         <div class="col-md-12  text-justify well well-lg" style="border:1px solid; border-radius:0px;">
@@ -25,10 +26,14 @@
               </div>
             </div>
           </div>
-          <div class="col-md-12" style=" border:1px solid;">
-            <div id="chart-container" class="col-md-12"></div>
-          </div>
           
+
+          <div class="col-md-12" style=" border:1px solid black; margin-top: -2%;">
+             <div id="chart" class="col-md-12">              
+             </div>
+          </div>
+
+
           <div class="container col-md-12 col-md-pull-1">
             
             <div class="col-md-3 col-md-push-1" style=" border:1px solid;margin-top:5%; width: 27%;height:30%;">
@@ -79,8 +84,12 @@
         </div>
       </div>
     </div>
+  @endsection
+
+@section('script')
+
+    <script type="text/javascript" src="{{ asset ('js/d3.v3.min.js') }}" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ asset('js/c3.min.js') }}" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ asset('js/charts.js') }}" charset="utf-8"></script>
     
-<script type="text/javascript" src="http://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
-<script type="text/javascript" src="js/charts.js"></script>
-  @endsection    
-  
+@stop

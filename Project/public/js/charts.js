@@ -1,124 +1,80 @@
-  FusionCharts.ready(function(){
-    var fusioncharts = new FusionCharts({
-    type: 'msline',
-    renderAt: 'chart-container',
-    width: '100%',
-    height: '50%',
-    dataFormat: 'json',
-    dataSource: {
-        "chart": {
-            "paletteColors": "#0075c2,#1aaf5d",
-            "bgcolor": "#ffffff",
-            "showBorder": "0",
-            "showShadow": "0",
-            "showCanvasBorder": "0",
-            "usePlotGradientColor": "0",
-            "legendBorderAlpha": "0",
-            "legendShadow": "0",
-            "showAxisLines": "0",
-            "showAlternateHGridColor": "0",
-            "divlineThickness": "1",
-            "divLineIsDashed": "1",
-            "divLineDashLen": "1",
-            "divLineGapLen": "1",
-            "xAxisName": "Months",
-			"yAxisName": "Profit",
-            "showValues": "0"
+var chart = c3.generate({
+  bindto: '#chart',
+  data: {
+    x: 'x',
+    columns: [
+      ['x', '2013-01-01', '2013-02-01', '2013-03-01', '2013-04-01', '2013-05-01', '2013-06-01', '2013-07-01', '2013-08-01', '2013-09-01', '2013-10-01', '2013-11-01', '2013-12-01'],
+      ['Products 1', 15123, 14233, 25507, 9110, 15529, 20803, 19202, 23650, 15000, 23202, 12202, 26202],
+      ['Products 2', 13400, 12800, 22800, 13400, 11800, 800, 21800, 6202, 25202, 9202, 22202, 18202],
+      ['Products 3', 1700, 16700, 12800, 10300, 16800, 2200, 27800, 5202, 15202, 5202, 11202, 12202],
+    ],
+    type: 'spline'
+  },
+
+  axis: 
+  {
+    x: 
+    {
+        label: 
+        { // ADD
+          text: 'Months',
+          position: 'outer-center'
+        },  
+
+      type: 'timeseries',
+      tick: 
+       {
+        format: function(x) 
+        {
+          var month = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+
+          return (month[x.getMonth()]);
         },
-        "categories": [{
-            "category": [{
-                "label": "1"
-            }, {
-                "label": "2"
-            }, {
-                "label": "3"
-            }, {
-                "label": "4"
-            }, {
-                "label": "5"
-            }, {
-                "label": "6"
-            }, {
-                "label": "7"
-            }, {
-                "label": "8"
-            }, {
-                "label": "9"
-            }, {
-                "label": "10"
-            }, {
-                "label": "11"
-            }, {
-                "label": "12"
-            }
-			
-			]
-        }],
-        "dataset": [{
-            "seriesname": "Product 1",
-            "data": [{
-                "value": "15123"
-            }, {
-                "value": "14233"
-            }, {
-                "value": "25507"
-            }, {
-                "value": "9110"
-            }, {
-                "value": "15529"
-            }, {
-                "value": "20803"
-            }, {
-                "value": "19202"
-            }, {
-                "value": "23650"
-            }, {
-                "value": "15000"
-            }, {
-                "value": "23202"
-            }, {
-                "value": "12202"
-            }, {
-                "value": "26202"
-            }]
-        }, {
-            "seriesname": "Product 2",
-            "data": [{
-                "value": "13400"
-            }, {
-                "value": "12800"
-            }, {
-                "value": "22800"
-            }, {
-                "value": "12400"
-            }, {
-                "value": "15800"
-            }, {
-                "value": "800"
-            }, {
-                "value": "21800"
-            }, {
-                "value": "6202"
-            }, {
-                "value": "25202"
-            }, {
-                "value": "9202"
-            }, {
-                "value": "22202"
-            }, {
-                "value": "18202"
-            }]
-        }],
-        "trendlines": [{
-            "line": [{
-                "startvalue": "17022",
-                "color": "#6baa01",
-                "valueOnRight": "1",
-                "displayvalue": "Average"
-            }]
-        }]
-    }
-}
-);
-    fusioncharts.render();
+        fit: false
+      }
+    },
+
+     y: 
+      {
+            min: 0,
+            max: 30000,
+            padding: 
+            {
+                bottom: 0,
+                top: 0
+            },
+            tick: 
+            {
+                format: function (d) 
+                {
+                    switch (d) 
+                    {
+                        case 0:
+                            return "0k"
+                        case 6000:
+                            return "6k"
+                        case 12000:
+                            return "12k"
+                        case 18000:
+                            return "18k"
+                        case 24000:
+                            return "24k"
+                        case 30000:
+                            return "30k"           
+
+                    }
+                },
+                fit: false,
+                values: [0, 6000,12000,18000,24000,30000],
+                width: 0
+            },
+
+        label: 
+        { // ADD
+          text: 'Profit',
+          position: 'outer-middle'
+        }
+      }
+
+  }
 });
