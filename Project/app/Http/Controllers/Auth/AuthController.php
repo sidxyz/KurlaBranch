@@ -1,12 +1,13 @@
 <?php
-
 namespace App\Http\Controllers\Auth;
 
 use App\User;
 use Validator;
+use App\Quotation;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+
 
 class AuthController extends Controller
 {
@@ -59,19 +60,20 @@ class AuthController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     
-    /*protected function validator(array $data)
+    protected function validator(array $data)
     {
-        return Validator::make($data, [
-          'first_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
+            return Validator::make($data, [
+            'firstname' => 'required|max:255',
+            'lastname' => 'required|max:255',
             'gender' => 'required',
-            'dateofbirth' => 'required',
+            'dob' => 'required',
             'phone' => 'required|min:10',
             'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
+            'password' => 'required|min:6',
+            'Re-password' => 'required|min:6',
             'address' => 'required|max:255',
-        ]);
-    }*/
+           ]);
+    }
 
     /**
      * Create a new user instance after a valid registration.

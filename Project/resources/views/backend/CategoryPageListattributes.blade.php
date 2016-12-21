@@ -13,7 +13,7 @@
             </div>
           
             <div class="col-md-3 col-md-push-1 ">
-
+              @include('frontend.partials._messages')
             	<form action="AddAttributes" method="POST">
 
             	<input type="hidden" name="_token" value="{{ csrf_token() }}">

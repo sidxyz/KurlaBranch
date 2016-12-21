@@ -19,6 +19,7 @@
           
 		  <!-- Text input-->
               <div class="form-group col-md-12">
+              @include('frontend.partials._messages')
                 <div class="col-md-5 col-md-pull-1">
                   <label class="control-label" style="font-size:15px;" for="Title">Category Title</label>
                 </div>

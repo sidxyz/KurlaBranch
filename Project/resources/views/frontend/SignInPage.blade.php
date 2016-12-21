@@ -4,6 +4,7 @@
 @section('content')
     <div class="col-md-push-1 container-fluid">
       <div class="col-md-push-1 well  col-md-10" style="border:1px solid; border-radius:0px;">
+        @include('frontend.partials._messages')
         <!--First Part-->
         <div class="col-md-12">
           <h3>Sign In</h3>
@@ -12,7 +13,7 @@
         <div class="col-md-5 " style="border:1px solid black; border-radius:2px;">
           
           <form class="form-horizontal col-md-12" method="POST" action="{{ url('/SignInPage') }}">
-           {{ csrf_field() }}
+           {{ csrf_field()}}
               <!-- Text input-->
               <div class="col-md-12">
                 <br>

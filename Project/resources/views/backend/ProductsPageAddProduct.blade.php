@@ -11,7 +11,7 @@
           </div>
           <div class="col-md-12" style="border:1px solid; border-radius:0px; padding: 5%;">
           <div class="col-md-12 text-center">
-
+            @include('frontend.partials._messages')
 
             <form class="form-horizontal" action="store" method="POST">
               <!-- Text input-->

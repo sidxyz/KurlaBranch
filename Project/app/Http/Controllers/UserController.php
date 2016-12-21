@@ -78,13 +78,9 @@ class UserController extends Controller
         $this->validate($request,array(
             'firstname' => 'required|max:255',
             'lastname' => 'required|max:255',
-           
             'dateofbirth' => 'required',
-           
             'phone' => 'required|min:10',
-           
             'email' => 'required|email|max:255',
-           
             'address' => 'required|max:255',
             ));
 
@@ -94,7 +90,7 @@ class UserController extends Controller
         $user->save();
 
         session()->flash('update','updated your details');  
-        //\Session::flash('update','updated your details');
+        \Session::flash('update','updated your details');
         
         return redirect('UserMyProfilePage');
     }

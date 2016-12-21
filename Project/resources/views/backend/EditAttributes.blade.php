@@ -14,6 +14,7 @@
 
             <form class="form-horizontal" action="updateattr/{{ $attr->attribute_id }}" method="POST">
               <!-- Text input-->
+              @include('frontend.partials._messages')
 
                {{method_field('patch')}}
 

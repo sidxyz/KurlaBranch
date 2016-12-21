@@ -21,6 +21,7 @@
         <div class=" colo-md-10 container-fluid">
           <div class="row">
             <div class="col-md-10 col-md-push-1">
+              @include('frontend.partials._messages')
               <!--Lower part-->
               <div class="col-md-12  text-justify well " style="border:1px solid; border-radius:0px;">
                 <div class="col-md-12">

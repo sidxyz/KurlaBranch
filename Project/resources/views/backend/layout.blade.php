@@ -9,6 +9,7 @@
 		    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css">
 		    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
 
+		    <link rel="stylesheet" type="text/css" href="{{ asset('css/parsley.css') }}" >
 		    <link rel="stylesheet" type="text/css" href="{{ asset('css\modal.css') }}">
 		    <link rel="stylesheet" type="text/css" href="{{ asset('css\main.css') }}" >
 		        
@@ -36,6 +37,7 @@
     <script type="text/javascript" src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js') }}"></script>
 
     <script type="text/javascript" src="{{ asset('js/datepicker.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/parsley.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/file.js') }}"></script>
     <script type="text/javascript" src="{{ asset('http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-filestyle/1.2.1/bootstrap-filestyle.js') }}"></script>

@@ -10,8 +10,8 @@
             </div>
           
             <div class="col-md-3 col-md-push-1 ">
-
- @foreach($user as $values)
+              @include('frontend.partials._messages')
+               @foreach($user as $values)
                 <form type="POST" action="ProductsPageAddProduct">
 
                 <input type="hidden" name="product_id" value="{{ $values->product_id }}">

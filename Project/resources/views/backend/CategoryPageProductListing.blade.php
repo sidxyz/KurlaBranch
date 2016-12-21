@@ -6,7 +6,7 @@
     <div class="col-md-push-1  col-md-10 container-fluid">
       <div class="col-md-12 ">
         <div class="col-md-12  text-justify well well-lg" style="border:1px solid; border-radius:0px;">
-          
+          @include('frontend.partials._messages')
           <div class="col-md-9">
           	<label ><h4 class="col-md-12"> Categories {Category name} Product Listing</h4></label>
             </div>

@@ -11,7 +11,7 @@
             </div>
           
             <div class="col-md-3 col-md-push-1 ">
-               
+               @include('frontend.partials._messages')
             </div>
             
             <div class="col-md-12 table-responsive">

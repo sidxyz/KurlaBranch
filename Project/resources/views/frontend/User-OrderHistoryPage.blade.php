@@ -7,6 +7,7 @@
           <!--Lower part-->
           <div class="col-md-12  text-justify well " style="border:1px solid; border-radius:0px;">
             <div class="col-md-12">
+              @include('frontend.partials._messages')
               <h3>Order Histroy</h3>
             </div>
             <div class="col-md-12 table-responsive">

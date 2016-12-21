@@ -11,7 +11,7 @@
           </div>
           <div class="col-md-12" style="border:1px solid; border-radius:0px; padding: 5%;">
 
-          
+            @include('frontend.partials._messages')
             <form class="form-horizontal" action="updateImg_pro/{{$user->product_id}}" method="POST" enctype="multipart/form-data">
               <!-- Text input-->
 

@@ -17,6 +17,7 @@
             </div>
             <div class="col-md-3 col-md-push-3">
               <div class="col-md-12 col-md-push-2">
+              @include('frontend.partials._messages')
                 <label class="col-md-1 col-md-pull-2">FROM</label>
                 <input class="col-md-7 " id="date1" name="date1" placeholder="/    /" type="text">
                 <label class="input-group col-md-1" for="date1">

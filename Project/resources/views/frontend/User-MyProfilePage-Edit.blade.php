@@ -10,6 +10,7 @@
         </div>
          @if(Auth::check())
         <div class="col-md-6 text-center">
+                @include('frontend.partials._messages')
             <form class="form-horizontal" action="UserMyProfilePageEdit/{{Auth::user()->user_id}}" method="get">
              <input type="hidden" name="token" value="{{ csrf_token() }}">
           <!-- Text input-->

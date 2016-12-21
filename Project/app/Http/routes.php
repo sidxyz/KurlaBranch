@@ -72,16 +72,16 @@ Route::get('ProductAttributeValue','ProductController@getAttributes');
 
 //end Attributes
 
-Route::group(['middleware' => ['web']], function () 
+Route::group(['middlewareGroups' => ['web']], function () 
 {
   //Authentication Routes
   Route::get('/SignInPage',['as'=>'login','uses'=>'Auth\AuthController@getLogin']);
   Route::post('/SignInPage','Auth\AuthController@postLogin');//Checking from database
   Route::get('/logout',['as'=>'logout','uses'=>'Auth\AuthController@getLogout']);  
 
-  //Registration Route
-  Route::get('/SignUpPage',['as'=>'register','uses'=>'Auth\AuthController@getRegister']);
-  Route::post('/SignUpPage','Auth\AuthController@postRegister');//Saving to database
+   //Registration Route
+   Route::get('/SignUpPage',['as'=>'register','uses'=>'Auth\AuthController@getRegister']);
+   Route::post('/SignUpPage','Auth\AuthController@postRegister');//Saving to database
 
    //Password Reset Routes
    Route::get('reset/{token?}', 'Auth\PasswordController@showResetForm');

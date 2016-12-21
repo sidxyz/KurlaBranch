@@ -148,6 +148,7 @@
 			                <div class="col-md-5">
 			                  <label class="control-label" style="font-size:15px;" for="Title">Body</label>
 			                </div>
+                      
 			                <div class="col-md-7 col-md-pull-3">
 			                  <textarea class="form-control" rows="5" id="bodycontent" ></textarea>
 			                </div>
@@ -167,6 +168,7 @@
       <div class="col-md-12 ">
         <div class="col-md-12  text-justify well well-lg" style="border:1px solid; border-radius:0px;">
           
+          @include('frontend.partials._messages')
           <div class="col-md-9">
           	<label ><h4 class="col-md-12">Static Pages</h4></label>
             </div>

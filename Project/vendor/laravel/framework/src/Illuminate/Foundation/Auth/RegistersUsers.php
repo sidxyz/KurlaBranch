@@ -52,11 +52,12 @@ trait RegistersUsers
      */
     public function register(Request $request)
     {
-        /*$validator = $this->validator($request->all());
+        $validator = $this->validator($request->all());
         if ($validator->fails()) 
         {
             $this->throwValidationException($request, $validator);
-        }*/
+        }
+
         Auth::guard($this->getGuard())->login($this->create($request->all()));
         return redirect($this->redirectPath());
     }

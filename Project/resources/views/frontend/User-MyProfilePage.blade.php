@@ -11,6 +11,7 @@
         </div>
          @if(Auth::check())
          <div class="col-md-6 text-center">
+          @include('frontend.partials._messages')
           <form class="form-horizontal">
                   <!-- Text input-->
             <div class="form-group col-md-12">

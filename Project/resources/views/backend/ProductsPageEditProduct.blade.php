@@ -8,8 +8,10 @@
             <label>
               <h4>Products/Edit Products</h4>
             </label>
+            @include('frontend.partials._messages')
           </div>
           <form class="form-horizontal" action="update_next/{{ $user->product_id}}" method="POST" enctype="multipart/form-data">
+
 
           {{method_field('patch')}}
           

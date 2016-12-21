@@ -10,7 +10,7 @@
           <div class="col-md-3 col-md-push-2">
           	<label ><h3 class="col-md-4 col-md-pull-12">Categories</h3></label>
             </div>
-          
+          @include('frontend.partials._messages')
             <div class="col-md-3 col-md-push-7">
                	<a href="CategoryPageAddCategory"><button type="button" class="btn btn-success col-md-8 btn-responsive">Add Categories</button></a>
             </div>

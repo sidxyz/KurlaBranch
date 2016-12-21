@@ -14,6 +14,7 @@
             <div class="col-md-12   well" style="border:1px solid ; border-radius:0px;">
               <h3 class="col-md-12 " style="top:-35px; left:-10px; ">Search Results</h3>
               <div class="col-md-12  col-md-pull-1" style=" top:-40px;">
+                      @include('frontend.partials._messages')
                 <h3 class="col-md-1   col-md-push-5" style=" margin-top:3.5%; font-size:21px;">Sort</h3>
                 <select style="margin-top:3.8%; margin-left:1%; ">
                   <option>Price: Low to High</option>
